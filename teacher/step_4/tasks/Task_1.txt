@@ -1,0 +1,3 @@
+Заполнить в ответе свойство agreementPrice согласно следующей формуле:
+    agreementPrice = days between agreementDateFrom and agreementDateTo
+
