@@ -1,0 +1,18 @@
+Добавить в проект библиотеку Lombok.
+
+	compileOnly 'org.projectlombok:lombok:1.18.24'
+	annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+	testCompileOnly 'org.projectlombok:lombok:1.18.24'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+В IntelliJIdea File -> Settings -> "Enable annotation processing"
+поставить галочку!
+
+Применить Lombok для генерации get/set методов и конструкторов
+для классов запроса и ответа:
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
