@@ -1,2 +1,3 @@
-include 'teacher:lesson_1_introduction:step_1_current_project'
+include 'teacher:step_1'
+include 'teacher:step_2'
 

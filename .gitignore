@@ -23,5 +23,5 @@
 *.ipr
 
 /teacher/build/
-/teacher/lesson_1_introduction/build/
-/teacher/lesson_1_introduction/out/
+/teacher/step_1/build/
+/teacher/step_2/out/
