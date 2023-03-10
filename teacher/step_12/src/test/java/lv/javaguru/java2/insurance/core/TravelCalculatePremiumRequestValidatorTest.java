@@ -2,14 +2,14 @@ package lv.javaguru.java2.insurance.core;
 
 import lv.javaguru.java2.insurance.dto.TravelCalculatePremiumRequest;
 import lv.javaguru.java2.insurance.dto.ValidationError;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
