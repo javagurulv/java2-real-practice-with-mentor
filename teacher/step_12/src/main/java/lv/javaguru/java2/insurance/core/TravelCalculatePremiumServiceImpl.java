@@ -12,12 +12,12 @@ import java.util.List;
 @Component
 class TravelCalculatePremiumServiceImpl implements TravelCalculatePremiumService {
 
-    @Autowired private TravelCalculatePremiumRequestValidator validator;
+    @Autowired private TravelCalculatePremiumRequestValidator requestValidator;
     @Autowired private DateTimeService dateTimeService;
 
     @Override
     public TravelCalculatePremiumResponse calculatePremium(TravelCalculatePremiumRequest request) {
-        List<ValidationError> errors = validator.validate(request);
+        List<ValidationError> errors = requestValidator.validate(request);
         return errors.isEmpty()
                 ? buildResponse(request)
                 : buildResponse(errors);

@@ -12,13 +12,13 @@ import static org.mockito.Mockito.when;
 
 public class TravelCalculatePremiumRequestValidatorTest {
 
-    private TravelCalculatePremiumRequestValidator validator = new TravelCalculatePremiumRequestValidator();
+    private TravelCalculatePremiumRequestValidator requestValidator = new TravelCalculatePremiumRequestValidator();
 
     @Test
     public void shouldReturnErrorWhenPersonFirstNameIsNull() {
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         when(request.getPersonFirstName()).thenReturn(null);
-        List<ValidationError> errors = validator.validate(request);
+        List<ValidationError> errors = requestValidator.validate(request);
         assertFalse(errors.isEmpty());
         assertEquals(errors.size(), 1);
         assertEquals(errors.get(0).getField(), "personFirstName");
@@ -29,7 +29,7 @@ public class TravelCalculatePremiumRequestValidatorTest {
     public void shouldReturnErrorWhenPersonFirstNameIsEmpty() {
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         when(request.getPersonFirstName()).thenReturn("");
-        List<ValidationError> errors = validator.validate(request);
+        List<ValidationError> errors = requestValidator.validate(request);
         assertFalse(errors.isEmpty());
         assertEquals(errors.size(), 1);
         assertEquals(errors.get(0).getField(), "personFirstName");
@@ -40,7 +40,7 @@ public class TravelCalculatePremiumRequestValidatorTest {
     public void shouldNotReturnErrorWhenPersonFirstNameIsPresent() {
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         when(request.getPersonFirstName()).thenReturn("firstName");
-        List<ValidationError> errors = validator.validate(request);
+        List<ValidationError> errors = requestValidator.validate(request);
         assertTrue(errors.isEmpty());
     }
 

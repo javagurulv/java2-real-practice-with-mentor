@@ -23,7 +23,7 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 public class TravelCalculatePremiumServiceImplTest {
 
-    @Mock private TravelCalculatePremiumRequestValidator validator;
+    @Mock private TravelCalculatePremiumRequestValidator requestValidator;
     @Mock private TravelPremiumUnderwriting premiumUnderwriting;
 
     @InjectMocks
@@ -33,7 +33,7 @@ public class TravelCalculatePremiumServiceImplTest {
     public void shouldReturnResponseWithErrors() {
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         List<ValidationError> errors = buildValidationErrorList();
-        when(validator.validate(request)).thenReturn(errors);
+        when(requestValidator.validate(request)).thenReturn(errors);
         TravelCalculatePremiumResponse response = service.calculatePremium(request);
         assertTrue(response.hasErrors());
     }
@@ -42,7 +42,7 @@ public class TravelCalculatePremiumServiceImplTest {
     public void shouldReturnResponseWithValidationErrors() {
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         List<ValidationError> errors = buildValidationErrorList();
-        when(validator.validate(request)).thenReturn(errors);
+        when(requestValidator.validate(request)).thenReturn(errors);
         TravelCalculatePremiumResponse response = service.calculatePremium(request);
         assertEquals(response.getErrors().size(), 1);
         assertEquals(response.getErrors().get(0).getField(), "field");
@@ -53,7 +53,7 @@ public class TravelCalculatePremiumServiceImplTest {
     public void shouldNotInvokeDateTimeUtilWhenValidationErrors() {
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         List<ValidationError> errors = buildValidationErrorList();
-        when(validator.validate(request)).thenReturn(errors);
+        when(requestValidator.validate(request)).thenReturn(errors);
         TravelCalculatePremiumResponse response = service.calculatePremium(request);
         assertEquals(response.getErrors().size(), 1);
         assertEquals(response.getErrors().get(0).getField(), "field");
@@ -64,7 +64,7 @@ public class TravelCalculatePremiumServiceImplTest {
     public void shouldReturnResponseWithCorrectPersonFirstName() {
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         when(request.getPersonFirstName()).thenReturn("personFirstName");
-        when(validator.validate(request)).thenReturn(List.of());
+        when(requestValidator.validate(request)).thenReturn(List.of());
         TravelCalculatePremiumResponse response = service.calculatePremium(request);
         assertEquals(response.getPersonFirstName(), "personFirstName");
     }
@@ -73,7 +73,7 @@ public class TravelCalculatePremiumServiceImplTest {
     public void shouldReturnResponseWithCorrectPersonLastName() {
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         when(request.getPersonLastName()).thenReturn("personLastName");
-        when(validator.validate(request)).thenReturn(List.of());
+        when(requestValidator.validate(request)).thenReturn(List.of());
         TravelCalculatePremiumResponse response = service.calculatePremium(request);
         assertEquals(response.getPersonLastName(), "personLastName");
     }
@@ -83,7 +83,7 @@ public class TravelCalculatePremiumServiceImplTest {
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         Date dateFrom = new Date();
         when(request.getAgreementDateFrom()).thenReturn(dateFrom);
-        when(validator.validate(request)).thenReturn(List.of());
+        when(requestValidator.validate(request)).thenReturn(List.of());
         TravelCalculatePremiumResponse response = service.calculatePremium(request);
         assertEquals(response.getAgreementDateFrom(), dateFrom);
     }
@@ -93,7 +93,7 @@ public class TravelCalculatePremiumServiceImplTest {
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         Date dateTo = new Date();
         when(request.getAgreementDateTo()).thenReturn(dateTo);
-        when(validator.validate(request)).thenReturn(List.of());
+        when(requestValidator.validate(request)).thenReturn(List.of());
         TravelCalculatePremiumResponse response = service.calculatePremium(request);
         assertEquals(response.getAgreementDateTo(), dateTo);
     }
@@ -103,7 +103,7 @@ public class TravelCalculatePremiumServiceImplTest {
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         when(request.getAgreementDateFrom()).thenReturn(createDate("01.01.2023"));
         when(request.getAgreementDateTo()).thenReturn(createDate("10.01.2023"));
-        when(validator.validate(request)).thenReturn(List.of());
+        when(requestValidator.validate(request)).thenReturn(List.of());
         when(premiumUnderwriting.calculatePremium(request)).thenReturn(new BigDecimal(9));
         TravelCalculatePremiumResponse response = service.calculatePremium(request);
         assertEquals(response.getAgreementPrice(), new BigDecimal(9));
