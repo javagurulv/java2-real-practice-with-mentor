@@ -22,6 +22,8 @@
 *.iml
 *.ipr
 
+/logs
+
 /teacher/build/
 /teacher/step_1/build/
 /teacher/step_1/out/
@@ -100,3 +102,6 @@
 
 /teacher/step_26/build/
 /teacher/step_26/out/
+
+/teacher/step_27/build/
+/teacher/step_27/out/
