@@ -8,24 +8,20 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "classifier_values")
+@Table(name = "classifiers")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClassifierValue {
+public class Classifier {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "classifier_id", nullable = false)
-    private Classifier classifier;
-
-    @Column(name = "ic", nullable = false)
-    private String ic;
+    @Column(name = "title", nullable = false)
+    private String title;
 
     @Column(name = "description", nullable = false)
     private String description;
