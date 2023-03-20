@@ -12,4 +12,5 @@ Java процесса самого приложения. H2 база данны�
 
 
 Как дополнительный материал по теме можно прочитать:
+https://www.baeldung.com/spring-boot-h2-database
 https://www.baeldung.com/spring-boot-data-sql-and-schema-sql
