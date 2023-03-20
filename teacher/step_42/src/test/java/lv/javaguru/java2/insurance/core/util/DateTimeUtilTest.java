@@ -1,4 +1,4 @@
-package lv.javaguru.java2.insurance.core;
+package lv.javaguru.java2.insurance.core.util;
 
 import lv.javaguru.java2.insurance.core.util.DateTimeUtil;
 import org.junit.jupiter.api.Test;
