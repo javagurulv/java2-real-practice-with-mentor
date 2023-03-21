@@ -10,7 +10,7 @@
   "selected_risks":["TRAVEL_MEDICAL", "TRAVEL_TRIP_CANCELLATION", "TRAVEL_LOSS_BAGGAGE"]
 }
 
-selected_risks - это массим строк, каждая строка содержит IC код
+selected_risks - это массив строк, каждая строка содержит IC код
 из классификатора RISK_TYPE.
 
 PS: никаких валидаций и проверок на данном этапе делать не надо.
