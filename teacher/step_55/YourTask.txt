@@ -1,10 +1,9 @@
 Для реализации расчёта премии на основе рисков ментор предлагает
 сделать следующие архитектурные изменения в пакете core.underwriting:
 
-- создать интерфейс TravelRiskPremiumCalculator с методами
+Создать интерфейс TravelRiskPremiumCalculator с методами
 
 BigDecimal calculatePremium(TravelCalculatePremiumRequest request);
-
 String getRiskIc();
 
 Для каждого из следующих рисков:
