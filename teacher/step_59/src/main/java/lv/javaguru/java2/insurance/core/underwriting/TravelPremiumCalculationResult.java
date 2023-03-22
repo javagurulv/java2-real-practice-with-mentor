@@ -2,8 +2,6 @@ package lv.javaguru.java2.insurance.core.underwriting;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lv.javaguru.java2.insurance.dto.RiskPremium;
 
 import java.math.BigDecimal;
