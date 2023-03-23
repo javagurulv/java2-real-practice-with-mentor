@@ -11,4 +11,4 @@ TRAVEL_EVACUATION
 TRAVEL_SPORT_ACTIVITIES
 
 Созданный SQL скрипт протестируйте на созданной базе данных
-и сохраните в файле database/riskTypeClassifierCreationScript.sql.
+и сохраните в файле database/mySqlDataScript.sql.
