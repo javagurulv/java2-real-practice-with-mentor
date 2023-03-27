@@ -14,6 +14,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
@@ -58,7 +59,8 @@ class TravelMedicalRiskPremiumCalculatorTest {
         when(ageCoefficientDomain.getCoefficient()).thenReturn(ageCoefficient);
         when(ageCoefficientRepository.findCoefficient(calculateAge(request))).thenReturn(Optional.of(ageCoefficientDomain));
 
-        BigDecimal expectedPremium = countryDefaultRate.multiply(daysCount).multiply(ageCoefficient).setScale(2, BigDecimal.ROUND_HALF_UP);
+        BigDecimal expectedPremium = countryDefaultRate.multiply(daysCount).multiply(ageCoefficient)
+                .setScale(2, RoundingMode.HALF_UP);
 
         BigDecimal result = calculator.calculatePremium(request);
 
