@@ -11,7 +11,7 @@
 
 3. Добавить в ответ поле medicalRiskLimitLevel.
 
-4. Создать свойство medical.risk.limit.enabled и
+4. Создать свойство medical.risk.limit.level.enabled и
 добавить его в application.properties. Это свойство
 может принимать два значения:
 true - функциональность включена;
@@ -20,7 +20,7 @@ false - функциональность выключена.
 5. Создать валидацию, если medical.risk.limit.level.enabled=true
 то поле в запросе medicalRiskLimitLevel является обязательным.
 
-6. Создать валидацию, если medical.risk.limit.enabled=true
+6. Создать валидацию, если medical.risk.limit.level.enabled=true
    то поле в запросе medicalRiskLimitLevel должно содержать
    одно из значений классификатора MEDICAL_RISK_LIMIT_LEVEL.
 
