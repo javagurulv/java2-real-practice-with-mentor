@@ -1,4 +1,4 @@
-package lv.javaguru.java2.insurance.core.underwriting.calculators;
+package lv.javaguru.java2.insurance.core.underwriting.calculators.medical;
 
 import lv.javaguru.java2.insurance.core.domain.AgeCoefficient;
 import lv.javaguru.java2.insurance.core.repositories.AgeCoefficientRepository;
@@ -17,18 +17,19 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class TravelMedicalPersonAgeCoefficientCalculatorTest {
+class AgeCoefficientCalculatorTest {
 
     @Mock private DateTimeUtil dateTimeUtil;
     @Mock private AgeCoefficientRepository ageCoefficientRepository;
 
     @InjectMocks
-    private TravelMedicalPersonAgeCoefficientCalculator calculator;
+    private AgeCoefficientCalculator calculator;
 
     private TravelCalculatePremiumRequest request;
 
@@ -50,7 +51,7 @@ class TravelMedicalPersonAgeCoefficientCalculatorTest {
         when(ageCoefficient.getCoefficient()).thenReturn(expectedCoefficient);
         when(ageCoefficientRepository.findCoefficient(age)).thenReturn(Optional.of(ageCoefficient));
 
-        BigDecimal result = calculator.findCoefficient(request);
+        BigDecimal result = calculator.calculate(request);
 
         assertEquals(expectedCoefficient, result);
     }
@@ -63,7 +64,7 @@ class TravelMedicalPersonAgeCoefficientCalculatorTest {
         when(dateTimeUtil.getCurrentDateTime()).thenReturn(Date.from(currentDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
         when(ageCoefficientRepository.findCoefficient(age)).thenReturn(Optional.empty());
 
-        RuntimeException exception = assertThrows(RuntimeException.class, () -> calculator.findCoefficient(request));
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> calculator.calculate(request));
 
         assertEquals("Age coefficient not found for age = " + age, exception.getMessage());
     }

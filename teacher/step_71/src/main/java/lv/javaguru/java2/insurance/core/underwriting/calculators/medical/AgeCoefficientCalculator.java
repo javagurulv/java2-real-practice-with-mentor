@@ -1,4 +1,4 @@
-package lv.javaguru.java2.insurance.core.underwriting.calculators;
+package lv.javaguru.java2.insurance.core.underwriting.calculators.medical;
 
 import lv.javaguru.java2.insurance.core.domain.AgeCoefficient;
 import lv.javaguru.java2.insurance.core.repositories.AgeCoefficientRepository;
@@ -14,12 +14,12 @@ import java.time.ZoneId;
 import java.util.Date;
 
 @Component
-class TravelMedicalPersonAgeCoefficientCalculator {
+class AgeCoefficientCalculator {
 
     @Autowired private DateTimeUtil dateTimeUtil;
     @Autowired private AgeCoefficientRepository ageCoefficientRepository;
 
-    BigDecimal findCoefficient(TravelCalculatePremiumRequest request) {
+    BigDecimal calculate(TravelCalculatePremiumRequest request) {
         int age = calculateAge(request);
         return ageCoefficientRepository.findCoefficient(age)
                 .map(AgeCoefficient::getCoefficient)
