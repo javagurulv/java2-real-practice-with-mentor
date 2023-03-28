@@ -24,7 +24,7 @@ false - функциональность выключена.
    то поле в запросе medicalRiskLimitLevel должно содержать
    одно из значений классификатора MEDICAL_RISK_LIMIT_LEVEL.
 
-7. Создать в базе данных таблицу MEDICAL_RISK_LIMIT_LEVEL_COEFFICIENT
+7. Создать в базе данных таблицу MEDICAL_RISK_LIMIT_LEVEL
 с полями: MEDICAL_RISK_LIMIT_LEVEL_IC, COEFFICIENT и заполнить ее
 значениями:
 - LEVEL_10000 -> коэффициент 1.0
@@ -33,7 +33,7 @@ false - функциональность выключена.
 - LEVEL_50000 -> коэффициент 2.0
 
 8. Создать доменный объект и репозиторий для таблицы
-MEDICAL_RISK_LIMIT_LEVEL_COEFFICIENT.
+MEDICAL_RISK_LIMIT_LEVEL.
 
 9. Поменять формулу расчёта медицинского риска на:
 premium = CountryDefaultDayRate * DayCount * AgeCoefficient * InsuranceLimitCoefficient.
