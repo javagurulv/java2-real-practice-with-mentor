@@ -65,11 +65,11 @@ Response: multiple error codes = ERROR_CODE_6.
 
 Test Case 17:
 Request: country is empty, RISK_TYPE - TRAVEL_MEDICAL.
-Response: multiple error codes = ERROR_CODE_10.
+Response: error code = ERROR_CODE_10.
 
 Test Case 18:
 Request: country is null, RISK_TYPE - TRAVEL_MEDICAL.
-Response: multiple error codes = ERROR_CODE_10.
+Response: error code = ERROR_CODE_10.
 
 Test Case 19:
 Request: all fields not provided, RISK_TYPE - TRAVEL_MEDICAL.
