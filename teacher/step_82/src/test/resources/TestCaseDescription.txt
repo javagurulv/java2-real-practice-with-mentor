@@ -75,7 +75,7 @@ Test Case 19:
 Request: all fields not provided, RISK_TYPE - TRAVEL_MEDICAL.
 Response: multiple error codes.
 
-Test Case 19:
+Test Case 20:
 Request: all fields not provided.
 Response: multiple error codes.
 
