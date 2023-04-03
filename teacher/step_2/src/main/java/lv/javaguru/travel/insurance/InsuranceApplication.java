@@ -1,4 +1,4 @@
-package lv.javaguru.java2.insurance;
+package lv.javaguru.travel.insurance;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
