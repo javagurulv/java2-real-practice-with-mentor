@@ -1,5 +1,6 @@
-package lv.javaguru.java2.insurance.core;
+package lv.javaguru.travel.insurance.core;
 
+import lv.javaguru.travel.insurance.core.DateTimeService;
 import org.junit.jupiter.api.Test;
 
 import java.text.ParseException;
