@@ -2,7 +2,7 @@
 
 Ваша задача:
 1. Создайте в /version_2 пакет /core/underwriting.
-2. Скопируйте интерфейс TravelRiskPremiumCalculator.
+2. Скопируйте в /version_2 интерфейс TravelRiskPremiumCalculator.
 3. Измените сигнатуру метода TravelRiskPremiumCalculator
 с
 BigDecimal calculatePremium(TravelCalculatePremiumRequestV1 request);
