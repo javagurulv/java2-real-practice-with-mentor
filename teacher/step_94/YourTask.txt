@@ -1,26 +1,33 @@
 Ваша задача:
 
-1. Создать пакет /corev2/validations.
+Изучить зависимости между пакетами:
+/core/domain
+/core/repositories
+/core/util
+/core/validations
+/core/underwriting
+/core/services
 
-2. Скопировать класс TravelAgreementFieldValidation из
-/core/validations в /corev2/validations.
+Правильная зависимость между пакетами должна быть следующей:
 
-3. Скопировать класс ValidationErrorFactory из пакета /core/validations
-в пакет /corev2/validations.
+/core/util - не зависит от других /core пакетов
+/core/domain - не зависит от других /core пакетов
+/core/repositories - зависит от /core/domain
+/core/validations - зависит от:
+        /core/util
+        /core/domain
+        /core/repositories
+/core/underwriting - зависит от:
+        /core/util
+        /core/domain
+        /core/repositories
+/core/services - зависит от:
+        /core/validations
+        /core/underwriting
 
-4. Скопировать в пакет /corev2/validations пакет
-/core/validations/agreement с валидациями agreement уровня
-из /core/validations.
 
-5. Перевести валидации agreement уровня и классы ValidationErrorFactory
-и TravelAgreementFieldValidation из пакета /corev2/validations
-на использование классов из пакета /corev2/api.
-
-На вход валидации уровня полиса должны принимать объект AgreementDTO
-и выдавать ValidationErrorDTO если будут найдены ошибки.
-
-Класс ValidationErrorFactory из пакета /corev2/validations должен
-создавать объекты ValidationErrorDTO.
-
-Не забудьте скопировать и перевести на новые объекты тесты
-валидаций agreement уровня.
+1. Скопировать в /version_2 пакет /core/domain.
+2. Скопировать в /version_2 пакет /core/repositories + тесты.
+3. Скопировать в /version_2 пакет /core/util + тесты.
+4. Скопировать в /version_2 папку resources как в /main так и в /test.
+5. Скопировать в /version_2 класс InsuranceApplication.
