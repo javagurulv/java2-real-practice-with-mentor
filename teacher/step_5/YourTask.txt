@@ -1,3 +1,5 @@
+Ваша задача:
+
 Добавить в проект библиотеку Lombok.
 
 	compileOnly('org.projectlombok:lombok:1.18.24')

@@ -1,2 +1,3 @@
-Добавить в ответ свойство agreementPrice типа BigDecimal.
+Ваша задача:
+добавить в ответ свойство agreementPrice типа BigDecimal.
 (TravelCalculatePremiumResponse)
