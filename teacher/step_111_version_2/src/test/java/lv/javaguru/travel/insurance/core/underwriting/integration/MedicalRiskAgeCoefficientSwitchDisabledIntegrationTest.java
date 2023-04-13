@@ -26,8 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest(properties = {"medical.risk.age.coefficient.enabled=false"})
 @AutoConfigureMockMvc
 @DirtiesContext(
-        classMode = DirtiesContext.ClassMode.BEFORE_CLASS,
-        methodMode = DirtiesContext.MethodMode.AFTER_METHOD
+        classMode = DirtiesContext.ClassMode.AFTER_CLASS
 )
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)
 public class MedicalRiskAgeCoefficientSwitchDisabledIntegrationTest {
