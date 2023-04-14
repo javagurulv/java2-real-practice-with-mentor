@@ -73,6 +73,36 @@
     <br>
     <div id="persons-container">
         <!-- PersonRequestDTO dynamic forms will be added here -->
+        <div th:each="person, personStat : *{persons}">
+            <div class="person-form">
+                <h3>Person <span th:text="${personStat.index + 1}"></span></h3>
+                <div>
+                    <label for="personFirstName">First Name:</label>
+                    <input type="text" th:field="*{persons[__${personStat.index}__].personFirstName}" />
+                </div>
+                </br>
+                <div>
+                    <label for="personLastName">Last Name:</label>
+                    <input type="text" th:field="*{persons[__${personStat.index}__].personLastName}" />
+                </div>
+                </br>
+                <div>
+                    <label for="personCode">Person Code:</label>
+                    <input type="text" th:field="*{persons[__${personStat.index}__].personCode}" />
+                </div>
+                </br>
+                <div>
+                    <label for="personBirthDate">Birth Date:</label>
+                    <input type="date" th:field="*{persons[__${personStat.index}__].personBirthDate}" />
+                </div>
+                </br>
+                <div>
+                    <label for="medicalRiskLimitLevel">Medical Risk Limit Level:</label>
+                    <input type="text" th:field="*{persons[__${personStat.index}__].medicalRiskLimitLevel}" />
+                </div>
+                </br>
+            </div>
+        </div>
     </div>
     <br>
     <button type="button" onclick="addPerson()">Add Person</button>
