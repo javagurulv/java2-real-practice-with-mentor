@@ -25,6 +25,7 @@
 - Jackson;
 - Google Guava;
 - JSON;
+- XML;
 - Hexagonal Architecture;
 - Fat JAR/WAR;
 - VCS, Git, GitHub, branches;
