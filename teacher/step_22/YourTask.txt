@@ -1,10 +1,10 @@
 Ментор обратил ваше внимание на то, что валидация не
 сделана до конца как отдельный модуль. Он предлагает
 переместить класс TravelCalculatePremiumRequestValidator
-в пакет validations, сделать для него публичный интерфейс,
+в пакет /core/validations, сделать для него публичный интерфейс,
 а сам класс package level access, а так же оставить только
 package level access для TravelRequestValidation.
-Таким образом из пакета validations наружу будет виден
+Таким образом из пакета /core/validations наружу будет виден
 только один интерфейс TravelCalculatePremiumRequestValidator.
 
 Ваша задача: если вы согласны с предложением ментора,
