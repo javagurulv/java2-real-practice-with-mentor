@@ -1,4 +1,4 @@
-include 'fruit_warehouse:step_1'
+include 'apple_warehouse:step_1'
 
 
 include 'private_property_insurance_calculator:step_1'
