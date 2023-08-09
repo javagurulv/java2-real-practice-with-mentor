@@ -6,6 +6,7 @@ include 'apple_warehouse:step_5'
 include 'apple_warehouse:step_6'
 include 'apple_warehouse:step_7'
 include 'apple_warehouse:step_8'
+include 'apple_warehouse:step_9'
 
 
 include 'private_property_insurance_calculator:step_1'
