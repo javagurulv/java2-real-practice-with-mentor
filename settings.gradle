@@ -17,6 +17,7 @@ include 'traders_and_transactions:step_1'
 include 'traders_and_transactions:step_2'
 include 'traders_and_transactions:step_3'
 include 'traders_and_transactions:step_4'
+include 'traders_and_transactions:step_5'
 
 
 include 'private_property_insurance_calculator:step_1'
