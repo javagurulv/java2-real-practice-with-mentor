@@ -13,6 +13,9 @@ include 'apple_warehouse:step_12'
 include 'apple_warehouse:step_13'
 
 
+include 'bank_transactions:step_1'
+
+
 include 'traders_and_transactions:step_1'
 include 'traders_and_transactions:step_2'
 include 'traders_and_transactions:step_3'
