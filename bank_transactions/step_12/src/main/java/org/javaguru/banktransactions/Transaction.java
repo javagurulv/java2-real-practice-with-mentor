@@ -6,9 +6,6 @@ import org.immutables.value.Value;
 interface Transaction {
 
     @Value.Parameter
-    String ownerFullName();
-
-    @Value.Parameter
     int amount();
 
     @Value.Parameter

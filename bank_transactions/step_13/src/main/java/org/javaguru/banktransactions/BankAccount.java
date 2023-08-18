@@ -5,12 +5,18 @@ class BankAccount {
     private String ownerFullName;
     private Transaction[] transactions;
 
-    // Задание 1:
-    // создайте конструктор класса, который принимает
-    // значения всех свойств.
+    public BankAccount(String ownerFullName, Transaction[] transactions) {
+        this.ownerFullName = ownerFullName;
+        this.transactions = transactions;
+    }
 
-    // Задание 2: создайте get() метод для свойства ownerFullName
 
-    // Задание 3: создайте get() метод для свойства transactions
+    public String getOwnerFullName() {
+        return ownerFullName;
+    }
+
+    public Transaction[] getTransactions() {
+        return transactions;
+    }
 
 }
