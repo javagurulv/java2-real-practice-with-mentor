@@ -1,8 +1,12 @@
 Ментор показал вам пример создания не изменяемого объекта при помощи
 Immutables библиотеки, это класс
+
 src/main/java/org/javaguru/immutables/Book.java
+
 и тест этого класса
+
 src/test/java/org/javaguru/immutables/BookTest.java
+
 в котором продемонстрированы разные способы создания
 не изменяемого объекта Book.
 
