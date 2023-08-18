@@ -24,6 +24,7 @@ include 'bank_transactions:step_8'
 include 'bank_transactions:step_9'
 include 'bank_transactions:step_10'
 include 'bank_transactions:step_11'
+include 'bank_transactions:step_12'
 
 
 include 'traders_and_transactions:step_1'
