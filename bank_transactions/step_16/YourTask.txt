@@ -1,0 +1,10 @@
+Классы:
+
+org/javaguru/banktransactions/CurrentBalanceCalculatorStreamApiImpl.java
+org/javaguru/banktransactions/CurrentBalanceCalculatorStreamApiImplTest.java
+
+содержат реализацию алгоритма расчёта текущего баланса
+банковского аккаунта при помощи Stream API и его тесты.
+
+Попробуйте предложить улучшения кода для класса
+CurrentBalanceCalculatorStreamApiImpl.
