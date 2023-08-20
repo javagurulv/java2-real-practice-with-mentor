@@ -42,6 +42,7 @@ include 'bank_transactions:step_26'
 include 'bank_transactions:step_27'
 include 'bank_transactions:step_28'
 include 'bank_transactions:step_29'
+include 'bank_transactions:step_30'
 
 
 include 'traders_and_transactions:step_1'
