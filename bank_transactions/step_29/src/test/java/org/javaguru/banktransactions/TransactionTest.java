@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class TransactionTest {
 
     @Test
-    public void shouldCreateBook() {
+    public void shouldCreateTransaction() {
         Transaction transaction = ImmutableTransaction.of(
                 100,
                 TransactionType.DEPOSIT);
