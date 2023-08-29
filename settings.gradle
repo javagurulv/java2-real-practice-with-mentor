@@ -74,6 +74,9 @@ include 'bank_transactions:step_58'
 include 'bank_transactions:step_59'
 
 
+include 'fraud_detector:step_1'
+
+
 include 'traders_and_transactions:step_1'
 include 'traders_and_transactions:step_2'
 include 'traders_and_transactions:step_3'
