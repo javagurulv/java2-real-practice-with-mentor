@@ -69,6 +69,7 @@ include 'bank_transactions:step_53'
 include 'bank_transactions:step_54'
 include 'bank_transactions:step_55'
 include 'bank_transactions:step_56'
+include 'bank_transactions:step_57'
 
 
 include 'traders_and_transactions:step_1'
