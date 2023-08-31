@@ -82,6 +82,7 @@ include 'fraud_detector:step_5'
 include 'fraud_detector:step_6'
 include 'fraud_detector:step_7'
 include 'fraud_detector:step_8'
+include 'fraud_detector:step_9'
 
 
 include 'traders_and_transactions:step_1'
