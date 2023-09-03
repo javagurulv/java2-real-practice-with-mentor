@@ -11,7 +11,7 @@ FraudDetector.isFraud(Transaction t) мы не можем
 Решение может выглядеть следующим образом:
 - создаём отдельный класс FraudDetectionResult
   для объединения двух возвращаемых значений;
-- меняем интерфейс FraudDetection так, чтобы из
+- меняем класс FraudDetector так, чтобы из
   метода isFraud() возвращался FraudDetectionResult;
 - меняем логику работы класса FraudDetector для
   возвращения правильного типа результата.
