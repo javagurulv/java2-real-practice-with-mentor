@@ -21,7 +21,7 @@
 
 interface FraudRule {
 
-    public boolean isFraud(Transaction t);
+    boolean isFraud(Transaction t);
 
 }
 
