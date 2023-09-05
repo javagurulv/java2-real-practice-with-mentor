@@ -95,6 +95,7 @@ include 'fraud_detector:step_16'
 include 'geometry_shape:step_1'
 include 'geometry_shape:step_2'
 include 'geometry_shape:step_3'
+include 'geometry_shape:step_4'
 
 
 include 'traders_and_transactions:step_1'
