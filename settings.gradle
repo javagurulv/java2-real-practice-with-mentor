@@ -106,6 +106,7 @@ include 'geometry_shape:step_11'
 include 'geometry_shape:step_12'
 include 'geometry_shape:step_13'
 include 'geometry_shape:step_14'
+include 'geometry_shape:step_15'
 
 
 include 'traders_and_transactions:step_1'
