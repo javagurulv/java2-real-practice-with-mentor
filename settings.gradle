@@ -1,4 +1,5 @@
 include 'part_1_programming_basics:lesson_1'
+include 'part_1_programming_basics:lesson_2'
 
 
 include 'apple_warehouse:step_1'
