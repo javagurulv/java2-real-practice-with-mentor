@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_5;
+package org.javaguru.mentor.lesson_5.lessoncode;
 
 class EvenNumberDetector {
 

@@ -1,4 +1,4 @@
-package lv.javaguru.java1.teacher.lesson_5_methods.homework.day_7.task_3_solution;
+package org.javaguru.mentor.lesson_5.homework.day_7.task_3_solution;
 
 import java.util.Scanner;
 
