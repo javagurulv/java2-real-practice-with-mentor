@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_3;
+package org.javaguru.mentor.lesson_3.lessoncode;
 
 public class BankAccountSetterApp {
 
