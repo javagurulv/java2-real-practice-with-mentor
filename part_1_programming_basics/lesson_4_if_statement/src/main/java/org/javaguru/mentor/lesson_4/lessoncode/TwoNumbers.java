@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_4;
+package org.javaguru.mentor.lesson_4.lessoncode;
 
 import java.util.Scanner;
 
