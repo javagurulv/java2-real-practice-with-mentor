@@ -2,6 +2,7 @@ include 'part_1_programming_basics:lesson_1_introduction'
 include 'part_1_programming_basics:lesson_2_variables'
 include 'part_1_programming_basics:lesson_3_oop_first_look'
 include 'part_1_programming_basics:lesson_4_if_statement'
+include 'part_1_programming_basics:lesson_5_methods'
 
 
 include 'apple_warehouse:step_1'
