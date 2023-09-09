@@ -1,4 +1,4 @@
-package org.javaguru.lesson_2;
+package org.javaguru.mentor.lesson_2;
 
 public class ConcatenateTextApp {
 

@@ -1,4 +1,4 @@
-package org.javaguru.lesson_1;
+package org.javaguru.mentor.lesson_1;
 
 class HelloWorld {
 
