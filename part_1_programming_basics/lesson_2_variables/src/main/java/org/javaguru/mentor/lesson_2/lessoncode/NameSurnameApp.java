@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_2;
+package org.javaguru.mentor.lesson_2.lessoncode;
 
 public class NameSurnameApp {
 
