@@ -1,0 +1,11 @@
+Рассказать о java.util.Map, HashMap и TreeMap.
+
+Создание:
+- new HashMap()
+- new TreeMap()
+
+Методы:
+- put()
+- size()
+- contains()
+- remove()

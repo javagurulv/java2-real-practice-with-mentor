@@ -45,6 +45,7 @@ include 'part_1_programming_basics:lesson_12_project_geometry_shape:step_16'
 
 include 'part_1_programming_basics:lesson_13_collections_list'
 include 'part_1_programming_basics:lesson_14_collections_set'
+include 'part_1_programming_basics:lesson_15_collections_map'
 
 
 include 'part_1_programming_basics:lesson_17_project_property_insurance_calculator:step_1'
