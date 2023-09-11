@@ -1,0 +1,10 @@
+Throwable
+Exception
+RuntimeException
+Checked exception
+Unchecked exception
+try
+catch
+finally
+throw
+throws

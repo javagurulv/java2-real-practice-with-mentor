@@ -1,0 +1,10 @@
+Рассказать про исключения в Java.
+
+Throwable
+Exception
+RuntimeException
+Checked vs Unchecked
+Exception logging
+try catch finally
+throw
+throws
