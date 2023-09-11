@@ -1,0 +1,6 @@
+Ментор рассказывает идею реализации структуры множества HashSet:
+- List<Basket> baskets;
+- Basket:
+    - int from,
+    - int to,
+    - List<Element>

@@ -1,0 +1,12 @@
+Рассказать о java.util.Set, HashSet и TreeSet.
+
+Создание:
+- new HashSet()
+- new TreeSet()
+- Set.of()
+
+Методы:
+- add()
+- size()
+- contains()
+- remove()

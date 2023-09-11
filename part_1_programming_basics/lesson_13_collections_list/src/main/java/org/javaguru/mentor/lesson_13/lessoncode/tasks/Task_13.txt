@@ -1,0 +1,13 @@
+Рассказать о java.util.List, ArrayList и LinkedList.
+
+Создание:
+- new ArrayList()
+- new LinkedList()
+- List.of()
+
+Методы:
+- add()
+- size()
+- get(i index)
+- remove()
+- contains()

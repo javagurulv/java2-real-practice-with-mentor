@@ -1,0 +1,6 @@
+Список
+Связный список
+Структура данных
+List
+ArrayList
+LinkedList
