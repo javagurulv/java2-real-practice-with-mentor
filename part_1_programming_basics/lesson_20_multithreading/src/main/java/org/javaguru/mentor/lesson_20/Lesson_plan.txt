@@ -12,5 +12,7 @@
 
 Stateless vs Statefull.
 
+Рассказать про пулы потоков.
+
 Thread
 Runnable
