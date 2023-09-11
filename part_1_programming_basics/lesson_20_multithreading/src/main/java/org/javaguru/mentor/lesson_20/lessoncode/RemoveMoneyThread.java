@@ -1,6 +1,6 @@
 package org.javaguru.mentor.lesson_20.lessoncode;
 
-public class RemoveMoneyThread implements Runnable {
+class RemoveMoneyThread implements Runnable {
 
 	private BankAccount bankAccount;
 

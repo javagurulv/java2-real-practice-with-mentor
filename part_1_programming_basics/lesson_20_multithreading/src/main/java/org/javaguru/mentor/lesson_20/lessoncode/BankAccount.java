@@ -1,6 +1,6 @@
 package org.javaguru.mentor.lesson_20.lessoncode;
 
-public class BankAccount {
+class BankAccount {
 
 	private int money;
 

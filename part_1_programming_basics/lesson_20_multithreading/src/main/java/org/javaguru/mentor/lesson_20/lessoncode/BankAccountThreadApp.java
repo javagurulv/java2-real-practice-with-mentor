@@ -1,6 +1,6 @@
 package org.javaguru.mentor.lesson_20.lessoncode;
 
-public class BankAccountThreadApp {
+class BankAccountThreadApp {
 
 	public static void main(String[] args) {
 		BankAccount bankAccount = new BankAccount(0);

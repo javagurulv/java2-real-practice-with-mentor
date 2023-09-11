@@ -1,6 +1,6 @@
 package org.javaguru.mentor.lesson_20.lessoncode;
 
-public class MainThreadExample {
+class MainThreadExample {
 
 	public static void main(String[] args) {
 
