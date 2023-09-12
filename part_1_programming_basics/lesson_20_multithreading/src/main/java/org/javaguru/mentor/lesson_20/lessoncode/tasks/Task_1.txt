@@ -1,0 +1,6 @@
+Создать приложение с main() методом и вывести на экран
+(Thread currentThread = Thread.currentThread();):
+- Thread.getId(),
+- Thread.getName(),
+- Thread.getPriority(),
+- Thread.getState().
