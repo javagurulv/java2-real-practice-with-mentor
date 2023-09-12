@@ -1,18 +1,31 @@
-Рассказать про архитектуру CPU (Central Processing Unit).
+Multithreading theory topics:
 
-Рассказать про поддержку многозадачности со стороны железа.
+1. Overall computer system hardware architecture
+   (CPU, RAM, HDD/SSD, IO devices, mother board).
+   How they related to each other and how work together?
 
-Рассказать про поддержку многозадачности со стороны операционной системы.
+2. One core CPU (CPU internals, ALU, скорость работы/операций в секунду,
+   транзисторы и их размер (нанометры), технологии создания CPU ASML).
 
-Рассказать про поддержку многозадачности со стороны Java.
+3. Multi core CPU (2/4/6/8/...32/64/...).
 
-Рассказать про общие данные и проблему доступа к ним.
+4. What is a resource? (CPU core time, RAM, HDD, network, etc).
 
-Рассказать про варианты синхронизации.
+5. OS (Operating System), Process concept. how OS manage resources
+   (RAM, CPU time, file system, network, etc)?
 
-Stateless vs Statefull.
+6. How application run the code? Thread concept.
+   (OS kernel level vs user level threads).
 
-Рассказать про пулы потоков.
+7. OS thread scheduling
+   (https://www.javatpoint.com/threads-in-operating-system, https://www.javatpoint.com/os-scheduling-algorithms)
 
-Thread
-Runnable
+8. Java Runnable interface.
+
+9. Java Thread class (creation, launching, execution, finishing).
+
+
+Дополнительные темы для изучения:
+- варианты синхронизации;
+- Stateless vs Statefull;
+- пулы потоков.
