@@ -3,20 +3,11 @@ package org.javaguru.mentor.lesson_20.lessoncode;
 class MainThreadExample {
 
 	public static void main(String[] args) {
-
-		int i = 1;
-
-		String myName = new String("Viktor");
-
-		a(myName);
-
-		System.out.println(myName);
-
-	}
-
-	public static void a(String str) {
-		int abc = 8;
-		System.out.println(str);
+		Thread currentThread = Thread.currentThread();
+		System.out.println("Thread id = " + currentThread.getId());
+		System.out.println("Thread name = " + currentThread.getName());
+		System.out.println("Thread priority = " + currentThread.getPriority());
+		System.out.println("Thread state = " + currentThread.getState());
 	}
 
 }
