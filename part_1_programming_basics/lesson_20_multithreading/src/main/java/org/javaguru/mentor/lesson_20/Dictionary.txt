@@ -3,3 +3,8 @@ Runnable
 Многопоточность
 CPU
 Ядра центрального процессора
+RAM
+HDD/SSD
+synchronized
+OS - Operating System
+Ресурсы
