@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_20.lessoncode;
+package org.javaguru.mentor.lesson_20.lessoncode.bankaccount;
 
 class BankAccount {
 
