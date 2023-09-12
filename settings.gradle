@@ -106,6 +106,7 @@ include 'part_1_programming_basics:lesson_19_project_property_insurance_calculat
 
 include 'part_1_programming_basics:lesson_20_multithreading'
 include 'part_1_programming_basics:lesson_21_refactoring'
+include 'part_1_programming_basics:lesson_22_bowling_game_kata'
 
 
 include 'apple_warehouse:step_1'
