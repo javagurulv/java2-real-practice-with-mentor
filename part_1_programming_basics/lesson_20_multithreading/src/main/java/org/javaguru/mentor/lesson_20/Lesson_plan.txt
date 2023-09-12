@@ -37,4 +37,5 @@ Multithreading theory topics:
 Дополнительные темы для изучения:
 - варианты синхронизации;
 - atomic классы;
+- JVM memory parameters;
 - пулы потоков.
