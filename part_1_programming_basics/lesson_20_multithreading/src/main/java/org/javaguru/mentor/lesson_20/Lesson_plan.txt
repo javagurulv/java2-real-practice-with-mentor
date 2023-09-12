@@ -24,8 +24,13 @@ Multithreading theory topics:
 
 9. Java Thread class (creation, launching, execution, finishing).
 
+10. Shared resources (общие ресурсы и проблемы
+    их одновременного использования).
+
+11. Synchronized.
+
 
 Дополнительные темы для изучения:
 - варианты синхронизации;
-- Stateless vs Statefull;
+- atomic классы;
 - пулы потоков.
