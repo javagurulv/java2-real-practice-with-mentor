@@ -1,0 +1,9 @@
+Цель этого занятия рассказать и показать рефакторинг в действии.
+Рассмотреть простые рефакторинги:
+- Rename variable
+- Rename method
+- Rename class/interface
+- Extract method
+- Extract class
+
+Книга Мартина Фаулера: Рефакторинг.
