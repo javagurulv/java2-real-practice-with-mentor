@@ -24,10 +24,14 @@ Multithreading theory topics:
 
 9. Java Thread class (creation, launching, execution, finishing).
 
-10. Shared resources (общие ресурсы и проблемы
+10. JVM memory: Heap.
+
+11. JVM memory: Stack.
+
+12. Shared resources (общие ресурсы и проблемы
     их одновременного использования).
 
-11. Synchronized.
+13. Synchronized.
 
 
 Дополнительные темы для изучения:
