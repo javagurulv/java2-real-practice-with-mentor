@@ -1,0 +1,43 @@
+В процессе разработки проекта Travel Policy Calculator
+будут использоваться:
+
+- Gradle;
+- JUnit Framework;
+- Mockito Framework;
+- Spring Framework;
+- MySQL relational database;
+- H2 in memory relational database;
+- MySQL Workbench;
+- SQL (Structured Query Language);
+- Lombok;
+- Logback;
+- REST API;
+- WEB API (MVC);
+- Thymeleaf;
+- JPA;
+- Database Transactions;
+- Unit tests;
+- Integration tests;
+- Acceptance tests;
+- Refactoring;
+- Hibernate;
+- Open API/Swagger;
+- Jackson;
+- Google Guava;
+- JSON;
+- XML;
+- Hexagonal Architecture;
+- Fat JAR/WAR;
+- VCS, Git, GitHub, branches;
+- Pull requests;
+- Code review process;
+- Code modularity;
+- Single Responsibility Principle;
+- Dependency Injection (IoC - Inversion of Control);
+- Builder design pattern;
+- Factory design pattern;
+- Postman;
+- Liquibase;
+- IntelliJ Idea Community Edition;
+- Feature management (feature switch on/off);
+- CI (Continues Integration).

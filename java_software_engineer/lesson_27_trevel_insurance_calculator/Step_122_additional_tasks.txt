@@ -1,0 +1,37 @@
+Java practice additional tasks
+
+1. Implement REST /admin  API for:
+- person retrieval by id;
+- agreement retrieval by id;
+
+
+2. Implement REST /admin/search API for:
+- person search;
+- agreement search;
+
+
+3. Write integration tests for database using DbUnit.
+
+
+4. Create WEB /admin pages (with paging, sorting, searching) for:
+- persons;
+- agreements;
+
+
+5. Implement WEB security for /admin pages. Only admins can access them.
+
+
+6. Implement each new risk:
+- TRAVEL_TRIP_CANCELLATION
+- TRAVEL_LOSS_BAGGAGE
+- TRAVEL_THIRD_PARTY_LIABILITY
+- TRAVEL_EVACUATION
+- TRAVEL_SPORT_ACTIVITIES
+
+
+7. Divide project code to Gradle modules:
+- /core/api
+- /core
+- /web
+- /rest
+- /app
