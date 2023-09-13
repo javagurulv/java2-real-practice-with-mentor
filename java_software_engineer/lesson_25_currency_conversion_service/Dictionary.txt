@@ -1,0 +1,13 @@
+Application Design
+Functional Requirements
+Not Functional Requirements
+HTTP
+HTML
+Browser
+Web Client
+Web Server
+Servlet API
+Servlet
+Spring Web
+Spring Boot
+MVC
