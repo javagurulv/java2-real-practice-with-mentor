@@ -14,3 +14,4 @@
 - Spring Web
 - Spring Boot
 - MVC
+- REST
