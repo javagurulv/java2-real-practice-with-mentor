@@ -121,6 +121,7 @@ include 'java_software_engineer:lesson_24_single_responcibility_principle:step_9
 include 'java_software_engineer:lesson_24_single_responcibility_principle:step_10_search_paging'
 include 'java_software_engineer:lesson_24_single_responcibility_principle:step_11_mockito'
 include 'java_software_engineer:lesson_24_single_responcibility_principle:step_12_refactoring'
+include 'java_software_engineer:lesson_24_single_responcibility_principle:step_13_application_context'
 
 
 include 'apple_warehouse:step_1'
