@@ -10,4 +10,4 @@ Servlet API
 Servlet
 Spring Web
 Spring Boot
-MVC
+MVC vc REST
