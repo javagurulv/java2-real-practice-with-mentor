@@ -1,0 +1,9 @@
+Application Design
+Functional Requirements
+Not Functional Requirements
+Servlet API,
+JSP
+Database
+in-memory database
+ORM
+unit testing
