@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_6.homework.day_3;
+package org.javaguru.mentor.lesson_6.homework.level_3_junior;
 
 class PalindromeChecker {
 

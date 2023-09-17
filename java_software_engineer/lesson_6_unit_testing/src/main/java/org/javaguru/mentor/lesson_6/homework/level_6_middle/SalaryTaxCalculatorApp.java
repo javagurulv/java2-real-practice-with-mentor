@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_6.homework.day_6;
+package org.javaguru.mentor.lesson_6.homework.level_6_middle;
 
 import java.util.Scanner;
 

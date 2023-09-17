@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_6.homework.day_1;
+package org.javaguru.mentor.lesson_6.homework.level_1_intern;
 
 class TriangleSquare {
 

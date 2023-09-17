@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_6.homework.day_5;
+package org.javaguru.mentor.lesson_6.homework.level_5_middle;
 
 class ColourWaveDetector {
 

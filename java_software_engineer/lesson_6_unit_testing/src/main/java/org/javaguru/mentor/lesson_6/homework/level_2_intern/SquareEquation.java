@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_6.homework.day_2;
+package org.javaguru.mentor.lesson_6.homework.level_2_intern;
 
 class SquareEquation {
 
