@@ -3,9 +3,9 @@
 
 class BankAccount {
 
-    String ownerFirstName;
-    String ownerLastName;
-    int moneyAmount;
+    private String ownerFirstName;
+    private String ownerLastName;
+    private int moneyAmount;
 
     BankAccount(String ownerFirstName,
                 String ownerLastName
