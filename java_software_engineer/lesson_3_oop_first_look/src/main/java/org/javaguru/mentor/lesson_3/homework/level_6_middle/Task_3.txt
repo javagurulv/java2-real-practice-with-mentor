@@ -1,23 +1,24 @@
-Проверьте, соответствует ли структура созданных вами пакетов структуре пакетов в папке teacher.
+Проверьте, соответствует ли структура созданных
+вами пакетов структуре пакетов в папке teacher.
 
 teacher
 student_aleksandrs_padalko
     lesson_2
-        day_1
-        day_2
-        day_3
-        day_4
-        day_5
-        day_6
-        day_7
+        level_1_intern
+        level_2_intern
+        level_3_junior
+        level_4_junior
+        level_5_middle
+        level_6_middle
+        level_7_senior
     lesson_3
-        day_1
-        day_2
-        day_3
-        day_4
-        day_5
-        day_6
-        day_7
+        level_1_intern
+        level_2_intern
+        level_3_junior
+        level_4_junior
+        level_5_middle
+        level_6_middle
+        level_7_senior
 и так далее ...
 
 Если ваша структура пакетов не соответствует
