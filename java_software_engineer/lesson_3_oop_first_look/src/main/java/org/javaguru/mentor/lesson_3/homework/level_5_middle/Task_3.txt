@@ -4,7 +4,7 @@
 
 class Car {
 
-    String model;
+    private String model;
 
     Car(String newModel) {
         this.model = newModel;
