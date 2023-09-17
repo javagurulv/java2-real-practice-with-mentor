@@ -4,7 +4,7 @@
 
 class Phone {
 
-    String model;
+    private String model;
 
     Book(String newModel) {
         this.model = newModel;
