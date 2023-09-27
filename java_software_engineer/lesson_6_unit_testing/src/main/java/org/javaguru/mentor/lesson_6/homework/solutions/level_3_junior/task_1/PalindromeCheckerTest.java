@@ -1,0 +1,33 @@
+package org.javaguru.mentor.lesson_6.homework.solutions.level_3_junior.task_1;
+
+class PalindromeCheckerTest {
+
+    public static void main(String[] args) {
+        PalindromeCheckerTest test = new PalindromeCheckerTest();
+        test.shouldBePalindrome();
+        test.shouldNotBePalindrome();
+    }
+
+    public void shouldBePalindrome() {
+        PalindromeChecker checker = new PalindromeChecker();
+        boolean realResult = checker.isPalindrome("abcba");
+        checkResult(realResult, true, "shouldBePalindrome");
+    }
+
+    public void shouldNotBePalindrome() {
+        PalindromeChecker checker = new PalindromeChecker();
+        boolean realResult = checker.isPalindrome("abcbad");
+        checkResult(realResult, false, "shouldNotBePalindrome");
+    }
+
+    private void checkResult(boolean realResult,
+                             boolean expectedResult,
+                             String testScenarioName) {
+        if (realResult == expectedResult) {
+            System.out.println(testScenarioName + ": TEST OK!");
+        } else {
+            System.out.println(testScenarioName + ": TEST FAIL! expected = " + expectedResult + " but realResult = " + realResult);
+        }
+    }
+
+}
