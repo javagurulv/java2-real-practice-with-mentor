@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_6.homework.level_7_senior;
+package org.javaguru.mentor.lesson_6.homework.solutions.level_7_senior.task_1;
 
 class CompoundInterestCalculator {
 
