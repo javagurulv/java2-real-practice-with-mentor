@@ -7,27 +7,15 @@ class SalaryTaxCalculator {
         if (salary < 0) {
             tax = 0;
         } else if (salary < 10000) {
-            tax = calculateTaxUnder10k(salary);
+            tax = (salary / 100) * 30;
         } else if ((salary >= 10000) && (salary < 50000)) {
-            tax = calculateTaxUnder50k(salary);
+            tax = 3000 + (((salary - 10000) / 100) * 40);
         } else if (salary >= 50000) {
-            tax = calculateTaxMoreThen50k(salary);
+            tax = 19000 + (((salary - 50000) / 100) * 50);
         } else {
             return tax;
         }
         return tax;
-    }
-
-    private double calculateTaxMoreThen50k(double salary) {
-        return 19000 + (((salary - 50000) / 100) * 50);
-    }
-
-    private double calculateTaxUnder50k(double salary) {
-        return 3000 + (((salary - 10000) / 100) * 40);
-    }
-
-    private double calculateTaxUnder10k(double salary) {
-        return (salary / 100) * 30;
     }
 
 }
