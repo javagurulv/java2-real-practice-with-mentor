@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_7.homework.level_2_intern.solutions;
+package org.javaguru.mentor.lesson_7.homework.solutions.level_2_intern.task_7;
 
 import java.util.Random;
 
