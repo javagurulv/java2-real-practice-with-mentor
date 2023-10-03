@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_7.homework.level_7_senior;
+package org.javaguru.mentor.lesson_7.homework.solutions.level_6_senior.task_1;
 
 class Stock {
 

@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_7.homework.level_6_middle.solutions;
+package org.javaguru.mentor.lesson_7.homework.level_5_middle;
 
 class Sale {
 

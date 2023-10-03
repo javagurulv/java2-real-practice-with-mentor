@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_7.homework.level_5_middle.solutions;
+package org.javaguru.mentor.lesson_7.homework.solutions.level_4_middle.task_1;
 
 class SalaryAnalyser {
 

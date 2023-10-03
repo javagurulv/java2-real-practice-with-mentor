@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_7.homework.level_3_junior.solutions;
+package org.javaguru.mentor.lesson_13.homework.level_1_junior.solutions;
 
 class Book {
 

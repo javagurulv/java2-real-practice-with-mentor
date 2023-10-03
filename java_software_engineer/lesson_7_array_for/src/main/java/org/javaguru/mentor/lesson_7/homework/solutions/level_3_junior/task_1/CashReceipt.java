@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_7.homework.level_4_junior.solutions;
+package org.javaguru.mentor.lesson_7.homework.solutions.level_3_junior.task_1;
 
 class CashReceipt {
 
