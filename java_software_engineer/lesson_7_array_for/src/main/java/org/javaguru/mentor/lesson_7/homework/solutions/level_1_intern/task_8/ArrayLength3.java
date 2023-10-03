@@ -1,4 +1,4 @@
-package org.javaguru.mentor.lesson_7.homework.level_1_intern.solutions;
+package org.javaguru.mentor.lesson_7.homework.solutions.level_1_intern.task_8;
 
 class ArrayLength3 {
 
