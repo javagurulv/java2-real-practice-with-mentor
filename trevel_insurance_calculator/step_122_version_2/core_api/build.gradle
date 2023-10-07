@@ -1,0 +1,21 @@
+plugins {
+	id 'org.springframework.boot' version "2.7.5"
+}
+
+dependencies {
+
+	compileOnly('org.projectlombok:lombok:1.18.24')
+	annotationProcessor('org.projectlombok:lombok:1.18.24')
+
+	testCompileOnly('org.projectlombok:lombok:1.18.24')
+	testAnnotationProcessor('org.projectlombok:lombok:1.18.24')
+
+}
+
+jar {
+	enabled = true
+}
+
+bootJar {
+	enabled = false
+}
