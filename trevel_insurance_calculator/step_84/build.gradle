@@ -28,6 +28,11 @@ dependencies {
 	testImplementation('uk.org.webcompere:model-assert:1.0.0')
 
 	testImplementation('com.h2database:h2:1.4.200')
+
+	test {
+		useJUnitPlatform()
+	}
+
 }
 
 jar {

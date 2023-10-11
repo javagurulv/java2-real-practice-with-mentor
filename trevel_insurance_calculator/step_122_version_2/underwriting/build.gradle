@@ -30,6 +30,10 @@ dependencies {
 
 	testImplementation('uk.org.webcompere:model-assert:1.0.0')
 
+	test {
+		useJUnitPlatform()
+	}
+
 }
 
 jar {
