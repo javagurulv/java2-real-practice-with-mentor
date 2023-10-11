@@ -14,4 +14,8 @@ dependencies {
 		exclude (group: 'ch.qos.logback', module: 'logback-classic')
 	}
 
+	test {
+		useJUnitPlatform()
+	}
+
 }
