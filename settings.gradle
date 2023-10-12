@@ -250,6 +250,7 @@ include 'java_software_engineer:lesson_27_trevel_insurance_calculator:step_118_v
 include 'java_software_engineer:lesson_27_trevel_insurance_calculator:step_119_version_2'
 include 'java_software_engineer:lesson_27_trevel_insurance_calculator:step_120_version_2'
 include 'java_software_engineer:lesson_27_trevel_insurance_calculator:step_121'
+include 'java_software_engineer:lesson_27_trevel_insurance_calculator:step_122'
 
 include 'java_software_engineer:lesson_28_tennis_scoreboard'
 include 'java_software_engineer:lesson_29_weather_forecast'
