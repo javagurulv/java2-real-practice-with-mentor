@@ -44,7 +44,10 @@ TravelCostCoefficient + TravelerAgeCoefficient + DestinationSafetyRatingCoeffici
 Задача 5: реализация REST части (новые параметры запроса, маппинг).
 
 
-Задача 6: создание acceptance тестов.
+Задача 6: реализация UI части (новые параметры запроса, маппинг).
+
+
+Задача 7: создание acceptance тестов.
 
 
 
