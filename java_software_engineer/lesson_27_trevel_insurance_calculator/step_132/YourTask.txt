@@ -37,11 +37,14 @@ DestinationSafetyRatingCoefficient = стоимость путешествия /
 
 Формула расчёта премии для риска Отмена поездки для одного
 путешественника может выглядеть так:
-TRAVEL_CANCELLATION premium =
+TRIP_CANCELLATION premium =
 TravelCostCoefficient + TravelerAgeCoefficient + DestinationSafetyRatingCoefficient
 
 
-Задача 5: создание acceptance тестов.
+Задача 5: реализация REST части (новые параметры запроса, маппинг).
+
+
+Задача 6: создание acceptance тестов.
 
 
 
