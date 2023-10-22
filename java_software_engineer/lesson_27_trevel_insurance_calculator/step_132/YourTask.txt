@@ -1,0 +1,49 @@
+Ментор предложил вам следующий план реализации
+расчёта премии для риска Отмена поездки:
+
+Задача 1: реализация TravelCostCoefficient.
+
+TravelCostCoefficient - рассчитывается по следующей схеме:
+Стоимость поездки: 0 - 5000 евро -> TravelCostCoefficient = 10 евро
+Стоимость поездки: 5000 - 10000 евро -> TravelCostCoefficient = 30 евро
+Стоимость поездки: 10000 - 20000 евро -> TravelCostCoefficient = 100 евро
+Стоимость поездки: 20000 и более евро -> TravelCostCoefficient = 500 евро.
+
+
+Задача 2: реализация TravelerAgeCoefficient.
+
+TravelerAgeCoefficient - возраст путешественника в целых годах
+на момент начала поездки.
+Возраст 0 - 10 лет -> TravelerAgeCoefficient = 5 евро
+Возраст 10 - 18 лет -> TravelerAgeCoefficient = 10 евро
+Возраст 18 - 40 лет -> TravelerAgeCoefficient = 20 евро
+Возраст 40 - 65 лет -> TravelerAgeCoefficient = 30 евро
+Возраст 65 и далее лет -> TravelerAgeCoefficient = 50 евро.
+
+
+Задача 3: реализация DestinationSafetyRatingCoefficient.
+
+DestinationSafetyRatingCoefficient - рейтинг безопасности
+страны в которую едет путешественник (допустимые значения 0 - 10,
+чем значение выше тем безопаснее страна).
+Этот рейтинг может быть задан в базе данных следующим образом:
+LATVIA - 5
+SPAIN - 8
+JAPAN - 9
+DestinationSafetyRatingCoefficient = стоимость путешествия / рейтинг безопасности страны.
+
+
+Задача 4: реализация самой формулы расчёта.
+
+Формула расчёта премии для риска Отмена поездки для одного
+путешественника может выглядеть так:
+TRAVEL_CANCELLATION premium =
+TravelCostCoefficient + TravelerAgeCoefficient + DestinationSafetyRatingCoefficient
+
+
+Задача 5: создание acceptance тестов.
+
+
+
+Ваша задача:
+разработайте код для задачи 1: реализация TravelCostCoefficient.
