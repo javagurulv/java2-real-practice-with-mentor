@@ -10,15 +10,15 @@ TravelCostCoefficient - рассчитывается по следующей с�
 Стоимость поездки: 20000 и более евро -> TravelCostCoefficient = 500 евро.
 
 
-Задача 2: реализация TravelerAgeCoefficient.
+Задача 2: реализация AgeCoefficient.
 
-TravelerAgeCoefficient - возраст путешественника в целых годах
+AgeCoefficient - возраст путешественника в целых годах
 на момент начала поездки.
-Возраст 0 - 10 лет -> TravelerAgeCoefficient = 5 евро
-Возраст 10 - 18 лет -> TravelerAgeCoefficient = 10 евро
-Возраст 18 - 40 лет -> TravelerAgeCoefficient = 20 евро
-Возраст 40 - 65 лет -> TravelerAgeCoefficient = 30 евро
-Возраст 65 и далее лет -> TravelerAgeCoefficient = 50 евро.
+Возраст 0 - 10 лет -> AgeCoefficient = 5 евро
+Возраст 10 - 18 лет -> AgeCoefficient = 10 евро
+Возраст 18 - 40 лет -> AgeCoefficient = 20 евро
+Возраст 40 - 65 лет -> AgeCoefficient = 30 евро
+Возраст 65 и далее лет -> AgeCoefficient = 50 евро.
 
 
 Задача 3: реализация DestinationSafetyRatingCoefficient.
@@ -38,7 +38,7 @@ DestinationSafetyRatingCoefficient = стоимость путешествия /
 Формула расчёта премии для риска Отмена поездки для одного
 путешественника может выглядеть так:
 TRIP_CANCELLATION premium =
-TravelCostCoefficient + TravelerAgeCoefficient + DestinationSafetyRatingCoefficient
+TravelCostCoefficient + AgeCoefficient + DestinationSafetyRatingCoefficient
 
 
 Задача 5: реализация REST части (новые параметры запроса, маппинг).

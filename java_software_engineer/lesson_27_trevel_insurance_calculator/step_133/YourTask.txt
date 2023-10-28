@@ -1,4 +1,4 @@
-Перед реализацией задачи 2 - TravelerAgeCoefficient,
+Перед реализацией задачи 2 - AgeCoefficient,
 вы обнаруживаете, что AgeCoefficient был уже реализован
 при разработке TRAVEL_MEDICAL риска.
 
