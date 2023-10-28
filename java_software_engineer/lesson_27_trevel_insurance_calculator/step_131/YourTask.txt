@@ -1,4 +1,4 @@
-Расчет стоимости риска Отмена поездки (классификатор риска TRAVEL_TRIP_CANCELLATION)
+Расчет стоимости риска Отмена поездки (классификатор риска TRAVEL_CANCELLATION)
 в travel policy зависит от нескольких факторов, таких как:
 
 - Стоимость поездки: чем дороже совокупная стоимость поездки
@@ -19,7 +19,7 @@
 
 Формула расчёта премии для риска Отмена поездки для одного
 путешественника может выглядеть так:
-TRAVEL_TRIP_CANCELLATION premium =
+TRAVEL_CANCELLATION premium =
 TravelCostCoefficient + AgeCoefficient + CountrySafetyRatingCoefficient
 
 TravelCostCoefficient - рассчитывается по следующей схеме:
