@@ -37,7 +37,7 @@ CountrySafetyRatingCoefficient = стоимость путешествия / р�
 
 Формула расчёта премии для риска Отмена поездки для одного
 путешественника может выглядеть так:
-TRIP_CANCELLATION premium =
+TRAVEL_TRIP_CANCELLATION premium =
 TravelCostCoefficient + AgeCoefficient + CountrySafetyRatingCoefficient
 
 
