@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class TravelMedicalMedicalRiskLimitLevelValidationTest {
+class TMMedicalRiskLimitLevelValidationTest {
 
     @Mock private ClassifierValueRepository classifierValueRepository;
     @Mock private ValidationErrorFactory errorFactory;

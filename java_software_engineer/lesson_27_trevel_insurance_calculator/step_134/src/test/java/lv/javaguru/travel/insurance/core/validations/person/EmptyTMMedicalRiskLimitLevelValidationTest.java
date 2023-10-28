@@ -21,7 +21,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class EmptyTravelMedicalMedicalRiskLimitLevelValidationTest {
+class EmptyTMMedicalRiskLimitLevelValidationTest {
 
     @Mock private ValidationErrorFactory errorFactory;
 

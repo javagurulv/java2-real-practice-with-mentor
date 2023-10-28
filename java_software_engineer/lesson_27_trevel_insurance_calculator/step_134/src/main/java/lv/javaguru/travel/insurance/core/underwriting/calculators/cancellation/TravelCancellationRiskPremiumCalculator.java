@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 
 @Component
-class TravelTripCancellationRiskPremiumCalculator implements TravelRiskPremiumCalculator {
+class TravelCancellationRiskPremiumCalculator implements TravelRiskPremiumCalculator {
 
     @Override
     public BigDecimal calculatePremium(AgreementDTO agreement, PersonDTO person) {

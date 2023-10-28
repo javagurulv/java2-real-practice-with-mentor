@@ -1,8 +1,8 @@
 package lv.javaguru.travel.insurance.core.underwriting.calculators.medical;
 
 import lv.javaguru.travel.insurance.core.api.dto.PersonDTO;
-import lv.javaguru.travel.insurance.core.domain.TravelMedicalAgeCoefficient;
-import lv.javaguru.travel.insurance.core.repositories.TravelMedicalAgeCoefficientRepository;
+import lv.javaguru.travel.insurance.core.domain.TMAgeCoefficient;
+import lv.javaguru.travel.insurance.core.repositories.TMAgeCoefficientRepository;
 import lv.javaguru.travel.insurance.core.util.DateTimeUtil;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,10 +24,10 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class TravelMedicalAgeCoefficientCalculatorTest {
+class TMAgeCoefficientCalculatorTest {
 
     @Mock private DateTimeUtil dateTimeUtil;
-    @Mock private TravelMedicalAgeCoefficientRepository travelMedicalAgeCoefficientRepository;
+    @Mock private TMAgeCoefficientRepository TMAgeCoefficientRepository;
 
     @InjectMocks
     private AgeCoefficientCalculator calculator;
@@ -49,9 +49,9 @@ class TravelMedicalAgeCoefficientCalculatorTest {
         BigDecimal expectedCoefficient = BigDecimal.valueOf(1.2);
 
         when(dateTimeUtil.getCurrentDateTime()).thenReturn(Date.from(currentDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
-        TravelMedicalAgeCoefficient travelMedicalAgeCoefficient = mock(TravelMedicalAgeCoefficient.class);
-        when(travelMedicalAgeCoefficient.getCoefficient()).thenReturn(expectedCoefficient);
-        when(travelMedicalAgeCoefficientRepository.findCoefficient(age)).thenReturn(Optional.of(travelMedicalAgeCoefficient));
+        TMAgeCoefficient TMAgeCoefficient = mock(TMAgeCoefficient.class);
+        when(TMAgeCoefficient.getCoefficient()).thenReturn(expectedCoefficient);
+        when(TMAgeCoefficientRepository.findCoefficient(age)).thenReturn(Optional.of(TMAgeCoefficient));
 
         BigDecimal result = calculator.calculate(person);
 
@@ -65,7 +65,7 @@ class TravelMedicalAgeCoefficientCalculatorTest {
         int age = 33;
 
         when(dateTimeUtil.getCurrentDateTime()).thenReturn(Date.from(currentDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
-        when(travelMedicalAgeCoefficientRepository.findCoefficient(age)).thenReturn(Optional.empty());
+        when(TMAgeCoefficientRepository.findCoefficient(age)).thenReturn(Optional.empty());
 
         RuntimeException exception = assertThrows(RuntimeException.class, () -> calculator.calculate(person));
 
