@@ -11,10 +11,10 @@ import java.math.BigDecimal;
 @Component
 class CountryDefaultDayRateCalculator {
 
-    @Autowired private TMCountryDefaultDayRateRepository TMCountryDefaultDayRateRepository;
+    @Autowired private TMCountryDefaultDayRateRepository countryDefaultDayRateRepository;
 
     BigDecimal calculate(AgreementDTO agreement) {
-        return TMCountryDefaultDayRateRepository.findByCountryIc(agreement.getCountry())
+        return countryDefaultDayRateRepository.findByCountryIc(agreement.getCountry())
                 .map(TMCountryDefaultDayRate::getDefaultDayRate)
                 .orElseThrow(() -> new RuntimeException("Country day rate not found by country id = " + agreement.getCountry()));
     }

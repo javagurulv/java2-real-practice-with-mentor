@@ -21,7 +21,7 @@ class AgeCoefficientCalculator {
     private Boolean medicalRiskAgeCoefficientEnabled;
 
     @Autowired private DateTimeUtil dateTimeUtil;
-    @Autowired private TMAgeCoefficientRepository TMAgeCoefficientRepository;
+    @Autowired private TMAgeCoefficientRepository ageCoefficientRepository;
 
     BigDecimal calculate(PersonDTO person) {
         return medicalRiskAgeCoefficientEnabled
@@ -31,7 +31,7 @@ class AgeCoefficientCalculator {
 
     private BigDecimal getCoefficient(PersonDTO person) {
         int age = calculateAge(person);
-        return TMAgeCoefficientRepository.findCoefficient(age)
+        return ageCoefficientRepository.findCoefficient(age)
                 .map(TMAgeCoefficient::getCoefficient)
                 .orElseThrow(() -> new RuntimeException("Age coefficient not found for age = " + age));
     }
