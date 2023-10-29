@@ -33,11 +33,11 @@ class ClassifierValueRepositoryTest {
     }
 
     @Test
-    public void shouldFind_RiskType_TRAVEL_TRIP_CANCELLATION() {
+    public void shouldFind_RiskType_TRAVEL_CANCELLATION() {
         Optional<ClassifierValue> valueOpt = classifierValueRepository.findByClassifierTitleAndIc(
-                "RISK_TYPE", "TRAVEL_TRIP_CANCELLATION");
+                "RISK_TYPE", "TRAVEL_CANCELLATION");
         assertTrue(valueOpt.isPresent());
-        assertEquals(valueOpt.get().getIc(), "TRAVEL_TRIP_CANCELLATION");
+        assertEquals(valueOpt.get().getIc(), "TRAVEL_CANCELLATION");
         assertEquals(valueOpt.get().getClassifier().getTitle(), "RISK_TYPE");
     }
 

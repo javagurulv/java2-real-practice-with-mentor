@@ -17,7 +17,7 @@
 Классификатор: RISK_TYPE
 Доступные значения классификатора RISK_TYPE:
 TRAVEL_MEDICAL
-TRAVEL_TRIP_CANCELLATION
+TRAVEL_CANCELLATION
 TRAVEL_LOSS_BAGGAGE
 TRAVEL_THIRD_PARTY_LIABILITY
 и так далее.
@@ -64,7 +64,7 @@ classifiers
 
 classifier_values
 1, 1 (foreign key to classifiers table), TRAVEL_MEDICAL, travel policy medical risk
-2, 1 (foreign key to classifiers table), TRAVEL_TRIP_CANCELLATION, travel policy trip cancellation risk
+2, 1 (foreign key to classifiers table), TRAVEL_CANCELLATION, travel policy trip cancellation risk
 3, 1 (foreign key to classifiers table), TRAVEL_LOSS_BAGGAGE, travel policy baggage lose risk
 4, 2 (foreign key to classifiers table), LATVIA, country Latvia
 4, 2 (foreign key to classifiers table), SPAIN, country Spain

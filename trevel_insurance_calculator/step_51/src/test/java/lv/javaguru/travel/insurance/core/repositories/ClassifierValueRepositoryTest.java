@@ -29,8 +29,8 @@ class ClassifierValueRepositoryTest {
     }
 
     @Test
-    public void shouldFind_RiskType_TRAVEL_TRIP_CANCELLATION() {
-        searchClassifierValueAndCheck("RISK_TYPE", "TRAVEL_TRIP_CANCELLATION");
+    public void shouldFind_RiskType_TRAVEL_CANCELLATION() {
+        searchClassifierValueAndCheck("RISK_TYPE", "TRAVEL_CANCELLATION");
     }
 
     @Test

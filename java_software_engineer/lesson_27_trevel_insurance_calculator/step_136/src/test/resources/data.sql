@@ -19,7 +19,7 @@ INSERT INTO classifier_values(
     description)
 SELECT
 	cl.id,
-    'TRAVEL_TRIP_CANCELLATION',
+    'TRAVEL_CANCELLATION',
     'Travel policy trip cancellation risk type'
  FROM classifiers as cl
  WHERE cl.title = 'RISK_TYPE';

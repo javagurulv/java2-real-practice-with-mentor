@@ -29,7 +29,7 @@ class TravelCancellationRiskPremiumCalculator implements TravelRiskPremiumCalcul
 
     @Override
     public String getRiskIc() {
-        return "TRAVEL_TRIP_CANCELLATION";
+        return "TRAVEL_CANCELLATION";
     }
 
 }

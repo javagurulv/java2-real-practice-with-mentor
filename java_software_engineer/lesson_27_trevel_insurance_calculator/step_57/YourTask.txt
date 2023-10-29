@@ -42,7 +42,7 @@
             "premium": 2.00
           },
           {
-             "riskIc": "TRAVEL_TRIP_CANCELLATION",
+             "riskIc": "TRAVEL_CANCELLATION",
              "premium": 5.00
           },
   ]
