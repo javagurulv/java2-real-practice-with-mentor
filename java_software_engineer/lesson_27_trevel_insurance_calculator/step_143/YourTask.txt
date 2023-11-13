@@ -8,9 +8,9 @@ TravelCalculatePremiumControllerTestCase3
 ...
 
 - названия тестовых сценариев никак не связаны с бизнес правилами:
-TravelCalculatePremiumControllerTestCase1
-TravelCalculatePremiumControllerTestCase2
-TravelCalculatePremiumControllerTestCase3
+TestCase1
+TestCase2
+TestCase3
 ...
 
 - в тестах нет структуры, всё свалено в одну большую кучу
