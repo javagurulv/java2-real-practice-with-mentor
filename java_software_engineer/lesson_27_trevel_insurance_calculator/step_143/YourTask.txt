@@ -7,7 +7,7 @@ TravelCalculatePremiumControllerTestCase2
 TravelCalculatePremiumControllerTestCase3
 ...
 
-- названия классов никак не связаны с бизнес правилами:
+- названия тестовых сценариев никак не связаны с бизнес правилами:
 TravelCalculatePremiumControllerTestCase1
 TravelCalculatePremiumControllerTestCase2
 TravelCalculatePremiumControllerTestCase3
