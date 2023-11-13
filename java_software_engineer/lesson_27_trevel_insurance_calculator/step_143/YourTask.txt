@@ -27,7 +27,7 @@ TravelCalculatePremiumControllerTestCase3
 Давайте решим все эти проблемы одну за другой!
 
 
-Ваша первая задача:
+Ваша задача:
 - в коде много почти одинаковых классов:
 TravelCalculatePremiumControllerTestCase1
 TravelCalculatePremiumControllerTestCase2
