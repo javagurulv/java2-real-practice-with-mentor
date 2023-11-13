@@ -33,5 +33,6 @@ TravelCalculatePremiumControllerTestCase1
 TravelCalculatePremiumControllerTestCase2
 TravelCalculatePremiumControllerTestCase3
 ...
-придумайте решение этой проблемы и реализуйте его
+
+Придумайте решение этой проблемы и реализуйте его
 для тестов в папках rest/v1 и rest/v2!
