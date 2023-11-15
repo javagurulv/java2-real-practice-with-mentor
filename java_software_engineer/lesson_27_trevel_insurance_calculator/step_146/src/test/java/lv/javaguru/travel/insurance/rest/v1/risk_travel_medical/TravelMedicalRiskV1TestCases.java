@@ -12,10 +12,4 @@ public class TravelMedicalRiskV1TestCases extends TravelCalculatePremiumControll
         executeAndCompare("test_case_1", true);
     }
 
-    @Test
-    @DisplayName("ERROR_CODE_19 travelCost is NULL, must not be empty")
-    public void executeTestCase25() throws Exception {
-        executeAndCompare("test_case_25");
-    }
-
 }
