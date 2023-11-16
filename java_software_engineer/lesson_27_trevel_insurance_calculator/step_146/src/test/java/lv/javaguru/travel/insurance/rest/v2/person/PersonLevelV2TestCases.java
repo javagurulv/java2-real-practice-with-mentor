@@ -1,4 +1,4 @@
-package lv.javaguru.travel.insurance.rest.v2.person_level;
+package lv.javaguru.travel.insurance.rest.v2.person;
 
 import lv.javaguru.travel.insurance.rest.v2.TravelCalculatePremiumControllerV2TestCase;
 import org.junit.jupiter.api.DisplayName;

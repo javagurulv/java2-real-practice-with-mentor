@@ -1,4 +1,4 @@
-package lv.javaguru.travel.insurance.rest.v1.agreement_level;
+package lv.javaguru.travel.insurance.rest.v1.agreement;
 
 import lv.javaguru.travel.insurance.rest.v1.TravelCalculatePremiumControllerV1TestCase;
 import org.junit.jupiter.api.DisplayName;
