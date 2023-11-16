@@ -3,8 +3,9 @@
 большую кучу (внутри каждой версии /v1, /v2)!
 По хорошему требуется создание определённой структуры,
 например разделить все тесты на уровни:
-    agreement_level
-    person_level
+    agreement
+    person
+    risks
     risk_travel_medical
     risk_travel_cancellation
 Эта структура позволит лучше ориентироваться в тестах.
