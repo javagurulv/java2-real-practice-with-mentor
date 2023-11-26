@@ -1,4 +1,4 @@
-package lv.javaguru.travel.insurance.core.underwriting.integration;
+package lv.javaguru.travel.insurance.core.underwriting.integration.medical;
 
 import lv.javaguru.travel.insurance.core.api.dto.AgreementDTO;
 import lv.javaguru.travel.insurance.core.api.dto.PersonDTO;
@@ -25,16 +25,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Disabled
 @ExtendWith(SpringExtension.class)
-@SpringBootTest(properties = {"medical.risk.limit.level.enabled=false"})
+@SpringBootTest(properties = {"medical.risk.age.coefficient.enabled=true"})
 @AutoConfigureMockMvc
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)
-public class TravelMedicalRiskLimitLevelSwitchDisabledIntegrationTest {
+public class AgeCoefficientSwitchEnabledIntegrationTest {
 
-    @Autowired private TravelPremiumUnderwriting premiumUnderwriting;
+    @Autowired
+    private TravelPremiumUnderwriting premiumUnderwriting;
+
 
     @Test
-    public void shouldBeDisabledMedicalRiskLimitLevel() {
+    public void shouldBeEnabledMedicalRiskLimitLevel() {
         PersonDTO person = createPersonDTO()
                 .withFirstName("Vasja")
                 .withLastName("Pupkin")
@@ -52,7 +54,7 @@ public class TravelMedicalRiskLimitLevelSwitchDisabledIntegrationTest {
 
         TravelPremiumCalculationResult result = premiumUnderwriting.calculatePremium(agreement, person);
 
-        assertEquals(result.getTotalPremium(), new BigDecimal("327.25"));
+        assertEquals(result.getTotalPremium(), new BigDecimal("490.88"));
     }
 
     private Date createDate(String dateStr) {
