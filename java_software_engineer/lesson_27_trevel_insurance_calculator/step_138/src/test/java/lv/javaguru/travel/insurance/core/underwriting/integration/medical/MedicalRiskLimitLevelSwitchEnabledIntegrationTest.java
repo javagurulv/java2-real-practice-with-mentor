@@ -1,4 +1,4 @@
-package lv.javaguru.travel.insurance.core.underwriting.integration;
+package lv.javaguru.travel.insurance.core.underwriting.integration.medical;
 
 import lv.javaguru.travel.insurance.core.api.dto.AgreementDTO;
 import lv.javaguru.travel.insurance.core.api.dto.PersonDTO;
@@ -25,14 +25,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Disabled
 @ExtendWith(SpringExtension.class)
-@SpringBootTest(properties = {"medical.risk.age.coefficient.enabled=true"})
+@SpringBootTest(properties = {"medical.risk.limit.level.enabled=true"})
 @AutoConfigureMockMvc
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)
-public class MedicalRiskAgeCoefficientSwitchEnabledIntegrationTest {
+public class MedicalRiskLimitLevelSwitchEnabledIntegrationTest {
 
-    @Autowired
-    private TravelPremiumUnderwriting premiumUnderwriting;
+    @Autowired private TravelPremiumUnderwriting premiumUnderwriting;
 
 
     @Test
