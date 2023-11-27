@@ -294,6 +294,7 @@ include 'java_software_engineer:lesson_27_trevel_insurance_calculator:step_155'
 
 include 'java_software_engineer:lesson_28_tennis_scoreboard'
 include 'java_software_engineer:lesson_29_weather_forecast'
+include 'java_software_engineer:lesson_30_sql_practice'
 
 include 'apple_warehouse:step_1'
 include 'apple_warehouse:step_2'
