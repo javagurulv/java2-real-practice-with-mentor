@@ -21,7 +21,6 @@ class TravelCalculatePremiumServiceImpl implements TravelCalculatePremiumService
 
     @Autowired private TravelAgreementValidator agreementValidator;
     @Autowired private TravelPremiumUnderwriting premiumUnderwriting;
-    @Autowired private AgreementEntityFactory agreementEntityFactory;
 
     @Override
     public TravelCalculatePremiumCoreResult calculatePremium(TravelCalculatePremiumCoreCommand command) {
@@ -40,8 +39,6 @@ class TravelCalculatePremiumServiceImpl implements TravelCalculatePremiumService
 
         BigDecimal totalAgreementPremium = calculateTotalAgreementPremium(agreement);
         agreement.setAgreementPremium(totalAgreementPremium);
-
-        agreementEntityFactory.createAgreementEntity(agreement);
 
         TravelCalculatePremiumCoreResult coreResult = new TravelCalculatePremiumCoreResult();
         coreResult.setAgreement(agreement);
