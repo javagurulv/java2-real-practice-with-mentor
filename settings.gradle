@@ -129,6 +129,7 @@ include 'java_software_engineer:lesson_24_single_responcibility_principle:step_1
 include 'java_software_engineer:lesson_25_currency_conversion_service'
 include 'java_software_engineer:lesson_26_url_shortening_service'
 
+include 'java_software_engineer:lesson_27_trevel_insurance_calculator:step_0'
 include 'java_software_engineer:lesson_27_trevel_insurance_calculator:step_1'
 include 'java_software_engineer:lesson_27_trevel_insurance_calculator:step_2'
 include 'java_software_engineer:lesson_27_trevel_insurance_calculator:step_3'
