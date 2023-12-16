@@ -1,7 +1,7 @@
 package lv.javaguru.travel.insurance.core.validations.agreement;
 
 import lv.javaguru.travel.insurance.core.validations.ValidationErrorFactory;
-import lv.javaguru.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
+import lv.javaguru.travel.insurance.dto.TravelCalculatePremiumRequest;
 import lv.javaguru.travel.insurance.dto.ValidationError;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,11 +28,11 @@ class EmptyMedicalRiskLimitLevelValidationTest {
     private EmptyMedicalRiskLimitLevelValidation validation;
 
 
-    private TravelCalculatePremiumRequestV1 request;
+    private TravelCalculatePremiumRequest request;
 
     @BeforeEach
     void setUp() {
-        request = new TravelCalculatePremiumRequestV1();
+        request = new TravelCalculatePremiumRequest();
     }
 
     @Test

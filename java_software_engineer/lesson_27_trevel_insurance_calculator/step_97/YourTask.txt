@@ -1,15 +1,12 @@
 Ваша задача:
 
-1. Скопировать в /version_2 интерфейс TravelCalculatePremiumRequestValidator.
-2. Переименовать этот интерфейс в TravelAgreementValidator.
-3. Перевести интерфейс TravelAgreementValidator на использование
-   классов из пакета /core/api (AgreementDTO).
-4. Скопировать в /version_2 класс TravelCalculatePremiumRequestValidatorImpl.
-5. Переименовать этот класс в TravelAgreementValidatorImpl.
-6. Перевести класс TravelAgreementValidatorImpl на использование
-   классов из пакета /core/api (AgreementDTO).
-7. В классе TravelAgreementValidatorImpl переписать логику
-   валидации персон. В AgreementDTO теперь есть список персон, а не
-   одна как было раньше. Нужно реализовать логику проверки всех
-   персон из списка.
-8. Написать JUnit тесты на класс TravelAgreementValidatorImpl.
+1. Скопировать в /version_2 класс ValidationErrorFactory + тест.
+2. Перевести класс ValidationErrorFactory на использование классов
+   из пакета /core/api.
+3. Скопировать в /version_2 интерфейс TravelAgreementFieldValidation.
+4. Перевести интерфейс TravelAgreementFieldValidation на использование
+   классов из пакета /core/api. Вместо TravelCalculatePremiumRequestV1
+   подавать на валидацию класс AgreementDTO.
+5. Скопировать в /version_2 пакет /core/validations/agreement + тесты.
+6. Перевести скопированные /core/validations/agreement + тесты на
+   использование классов из пакета /core/api.

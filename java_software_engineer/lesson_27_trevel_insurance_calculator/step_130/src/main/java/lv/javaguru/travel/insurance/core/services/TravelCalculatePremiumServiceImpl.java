@@ -27,8 +27,7 @@ class TravelCalculatePremiumServiceImpl implements TravelCalculatePremiumService
         List<ValidationErrorDTO> errors = agreementValidator.validate(command.getAgreement());
         if (errors.isEmpty()) {
             calculatePremium(command.getAgreement());
-            AgreementEntity agreement = agreementEntityFactory.createAgreementEntity(command.getAgreement());
-            command.getAgreement().setUuid(agreement.getUuid());
+            agreementEntityFactory.createAgreementEntity(command.getAgreement());
             return buildResponse(command.getAgreement());
         } else {
             return buildResponse(errors);

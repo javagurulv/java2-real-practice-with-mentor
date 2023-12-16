@@ -1,26 +1,24 @@
-Ваша задача: запустить приложение и послать к нему HTTP запрос
-для расчёта стоимости страхового полиса. Это продемонстрирует
-вам то, как будут пользоваться разрабатываемым вами сервисом.
+Ментор обращает ваше внимание на качество кода.
+Хорошее ИТ решение это не просто решение, которое выполняет
+все предъявленные к нему требования. Это решение, которое
+легко понять и легко расширять и изменять. Поэтому, чтобы
+стать профессионалом, нужно следить за качеством кода,
+который вы создаёте.
 
-Для создания и посылки HTTP запросов воспользуйтесь программой
-Postman (https://www.postman.com/downloads/).
-
-После установки Postman создайте HTTP POST запрос
-и заполните секции Headers и Body по примеру приведённому в файлах:
-Postman_request_headers.png
-Postman_request_body.png
+Рефакторинг (англ. refactoring) — это процесс изменения
+внутренней структуры программы, не затрагивающий её внешнего
+поведения и имеющий целью облегчить понимание её работы.
 
 
-Body JSON example:
-{
-"personFirstName" : "Vasja",
-"personLastName" : "Pupkin",
-"agreementDateFrom" : "2021-05-25",
-"agreementDateTo" : "2021-05-29"
-}
+На тему рефакторинга классической является книга авторов
+Martin Fowler, Kent Beck, Refactoring: Improving the Design of Existing Code:
+First edition: https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672
+Second edition: https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599
 
-У вас будет много вопросов!
-Воспользуйтесь помощью ментора и силой интернета!
+На тему clean code классикой является The Clean Coder (by Robert C. Martin):
+https://www.amazon.com/Robert-Martinand-Professional-Programmers-Paperback/dp/B07VK8VZ9B
 
-PS: создайте как валидные так и не валидные запросы и убедитесь
-в том, что ваш сервис выдаёт ошибки при получении не валидного запроса.
+
+Ваша задача: написать тесты для класса
+TravelCalculatePremiumServiceImpl и улучшить
+его код (провести рефакторинг) если это возможно.
