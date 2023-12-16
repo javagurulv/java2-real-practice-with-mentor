@@ -293,6 +293,8 @@ include 'java_software_engineer:lesson_27_trevel_insurance_calculator:step_158'
 include 'java_software_engineer:lesson_27_trevel_insurance_calculator:step_159'
 include 'java_software_engineer:lesson_27_trevel_insurance_calculator:step_160'
 include 'java_software_engineer:lesson_27_trevel_insurance_calculator:step_161'
+include 'java_software_engineer:lesson_27_trevel_insurance_calculator:step_162'
+include 'java_software_engineer:lesson_27_trevel_insurance_calculator:step_163'
 
 include 'java_software_engineer:lesson_28_tennis_scoreboard'
 include 'java_software_engineer:lesson_29_weather_forecast'
