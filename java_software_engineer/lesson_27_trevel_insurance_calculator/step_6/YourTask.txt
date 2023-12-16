@@ -1,18 +1,48 @@
-Ваша задача: заполнить в ответе свойство agreementPrice согласно
-следующей формуле:
+Скорее всего тест написанный вами в предыдущем шаге выглядит так:
 
-    agreementPrice = days between agreementDateFrom and agreementDateTo
+class TravelCalculatePremiumServiceImplTest {
 
-PS: на данный момент это фейковое значение.
-Реализация реальных бизнес требований начнётся в районе 30 шага.
+    private TravelCalculatePremiumServiceImpl service = new TravelCalculatePremiumServiceImpl();
 
-PS: загуглите как рассчитать количество дней между двумя датами
-в Java. Для этого есть стандартное решение, найдите его и
-примените в своём проекте. Хороший программист должен научиться
-чувствовать, когда надо самому писать новый код, а когда можно
-найти готовое решение задачи в интернете.
+    @Test
+    public void shouldPopulateResponse() {
+        TravelCalculatePremiumRequest request = new TravelCalculatePremiumRequest();
+        request.setPersonFirstName("John");
+        request.setPersonLastName("Peterson");
+        request.setAgreementDateFrom(new Date());
+        request.setAgreementDateTo(new Date());
 
-Не переживайте, если первые задания кажутся вам очень простыми.
-Мы хотим, чтобы вы постепенно вкатились в проект, привыкли к процессу
-разработки, наладили общение с ментором. Задания постепенно будут
-становиться всё сложнее и сложнее.
+        TravelCalculatePremiumResponse response = service.calculatePremium(request);
+
+        assertEquals(response.getPersonFirstName(), request.getPersonFirstName());
+        assertEquals(response.getPersonLastName(), request.getPersonLastName());
+        assertEquals(response.getAgreementDateFrom(), request.getAgreementDateFrom());
+        assertEquals(response.getAgreementDateTo(), request.getAgreementDateTo());
+    }
+
+}
+
+Этот тест имеет один недостаток. Если он упадет, то сразу будет
+непонятно по какой причине он упал. "Идеальный" тест это тест
+к котором есть всего одна проверка. Если такой тест упадёт мы
+точно будем знать почему это случилось.
+
+Да, мы знаем о чём вы сейчас подумали. Эти ребята несут какую то чушь
+и хотят заставить меня делать непонятно что и непонятно зачем.
+
+Да, в действительности в реальных проектах сплошь и рядом пренебрегают
+качеством кода, качеством решений, простотой и так далее. Создают
+не идеальный код, пишут плохие тесты лишь бы они были (без них
+не пропустят на code review).
+
+Мы пишем с вами учебный проект. У нас нет жестких дедлайнов,
+стресса и прочей ерунды. Мы хотим вам показать классный, качественный
+код, мы хотим дать вам возможность увидеть и прочувствовать
+простоту решений, показать что в мире программирования есть
+место для другого подхода. Мы хотим дать вам возможность увидеть
+эти решения, прочувствовать их и взять на вооружение. Возможно
+и вы в реальных проектах в будущем захотите применить то,
+чему научитесь в этом проекте.
+
+Ваша задача: сделайте изменения в классе TravelCalculatePremiumServiceImplTest,
+напишите отдельный тестовый метод на каждое поле ответа.

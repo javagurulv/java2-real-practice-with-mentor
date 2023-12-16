@@ -1,53 +1,21 @@
-Ментор обратил ваше внимание на проблему возникшую при
-написании тестов на контроллер. Суть проблемы в следующем.
-Для сравнения JSON строк на данный момент используется
-следующий код из класса TravelCalculatePremiumControllerTest:
+Ваша задача: добавить в запрос (TravelCalculatePremiumRequest)
+секцию selected_risks и внести соответствующие изменения в Java код,
+чтобы секция selected_risks парсилась в Java класс запроса:
 
-ObjectMapper mapper = new ObjectMapper();
-assertEquals(mapper.readTree(responseBodyContent), mapper.readTree(jsonResponse));
+{
+  "personFirstName" : "Vasja",
+  "personLastName" : "Pupkin",
+  "agreementDateFrom" : "2025-05-25",
+  "agreementDateTo" : "2025-05-29",
+  "selected_risks":["TRAVEL_MEDICAL", "TRAVEL_CANCELLATION", "TRAVEL_LOSS_BAGGAGE"]
+}
 
-Проблема в том, что если сравниваемые JSON строки отличаются
-друг от друга только перестановкой элементов, содержат одни
-и те же элементы только в разном порядке то код выше считает
-такие JSON строки разными.
+selected_risks - это массив строк, каждая строка содержит IC код
+из классификатора RISK_TYPE.
 
-Например, следующие два JSON строки будут разные:
-
-{"errors":[
-  {
-    "field":"agreementDateFrom",
-    "message":"Must not be empty!"
-  },
-  {
-    "field":"agreementDateTo",
-    "message":"Must not be empty!"
-  }
-]}
-
-{"errors":[
-  {
-    "field":"agreementDateTo",
-    "message":"Must not be empty!"
-  },
-  {
-      "field":"agreementDateFrom",
-      "message":"Must not be empty!"
-    }
-]}
-
-
-Ваша задача: проверить проблему на которую обратил внимание ментор
-и найти решение этой проблемы. Цель - найти решение для сравнения
-контента JSON строк без учёта порядка расположения элементов.
-Проверить найденное решение и заменить старое решение на новое
-в проекте.
-
-Подсказка от ментора:
-https://www.baeldung.com/json-modelassert
-testImplementation('uk.org.webcompere:model-assert:1.0.0')
-
-        assertJson(responseBodyContent)
-                .where()
-                    .keysInAnyOrder()
-                    .arrayInAnyOrder()
-                .isEqualTo(jsonResponse);
+PS: никаких валидаций и проверок на данном этапе делать не надо.
+После внесения изменений запустите приложение, через Postman
+отправьте запрос с секцией selected_risks и убедитесь в дебаге,
+что в Java коде данные будут доступны для дальнейшей обработки.
+Так же можете проверить залогируется секция selected_risks и ее
+значения в лог файл или нет.

@@ -1,3 +1,10 @@
-Ваша задача: написать тесты на контроллер
-TravelCalculatePremiumController с помощью
-JSON файлов на все варианты запросов.
+Ментор просит вас написать тесты на контроллер
+TravelCalculatePremiumController, для того чтобы можно было
+поднимать приложение целиком, посылать HTTP POST запрос с JSON
+внутри и проверять ответ.
+
+Ментор создал вам пример такого теста в классе
+TravelCalculatePremiumControllerTest.
+
+Ваша задача: разобраться как работает тест контроллера
+TravelCalculatePremiumControllerTest.

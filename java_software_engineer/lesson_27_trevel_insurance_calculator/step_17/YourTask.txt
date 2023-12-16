@@ -1,29 +1,29 @@
-Ваша задача: ментор обратил ваше внимание на то,
-что даты в ответе показываются в странном формате.
+Ментор указал вам на то, что код TravelCalculatePremiumServiceImpl
+не отражает сути бизнес процесса, который он реализует. В
+нём нет чёткого акцента на место в коде, где бы
+происходил расчёт стоимости страхового полиса (underwriting).
+(на данный момент это происходит где-то во время создания ответа)
 
-Вопрос:
-{
-"personFirstName" : "Vasja",
-"personLastName" : "Pupkin",
-"agreementDateFrom" : "2021-05-25",
-"agreementDateTo" : "2021-05-29"
-}
+А ведь это и есть главная вещь, ради которой и
+создавался этот сервис!
 
+Попробуйте переделать код так, чтобы удовлетворить
+пожелание ментора и приблизить ваш код к реальному
+бизнес процессу, который он автоматизирует.
 
-Ответ:
-{
-    "errors": null,
-    "personFirstName": "Vasja",
-    "personLastName": "Pupkin",
-    "agreementDateFrom": "2021-05-25T00:00:00.000+00:00",
-    "agreementDateTo": "2021-05-29T00:00:00.000+00:00",
-    "agreementPrice": 4
-}
+Если у вас нет идей как это можно сделать - проконсультируйтесь с ментором!
 
-Ваша задача заключается в том, чтобы поменять формат даты
-в ответе на "yyyy-MM-dd".
+PS: при изменении кода не забудьте про тесты.
 
-Для этого ментор вам посоветовал воспользоваться библиотекой:
-	implementation('com.fasterxml.jackson.core:jackson-core:2.14.2')
-
-и аннотацией @JsonFormat.
+From business:
+The process of calculating the price of an insurance policy
+is typically referred to as "underwriting". Underwriting involves
+assessing the risk of insuring a particular individual or entity,
+based on factors such as age, health, occupation, location,
+and other relevant information. Once the risk has been assessed,
+the insurer can then determine the appropriate premium to charge
+for the policy, based on the likelihood of a claim being made and
+the potential cost of that claim. Underwriting is a key part of the
+insurance industry, as it helps to ensure that premiums are set at a
+level that is fair and sustainable for both the insurer and the
+policyholder.

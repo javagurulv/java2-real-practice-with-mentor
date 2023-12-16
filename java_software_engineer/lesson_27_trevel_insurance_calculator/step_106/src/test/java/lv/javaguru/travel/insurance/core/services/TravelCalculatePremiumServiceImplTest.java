@@ -3,7 +3,11 @@ package lv.javaguru.travel.insurance.core.services;
 import lv.javaguru.travel.insurance.core.api.command.TravelCalculatePremiumCoreCommand;
 import lv.javaguru.travel.insurance.core.api.command.TravelCalculatePremiumCoreResult;
 import lv.javaguru.travel.insurance.core.api.dto.AgreementDTO;
+import lv.javaguru.travel.insurance.core.api.dto.PersonDTO;
+import lv.javaguru.travel.insurance.core.api.dto.RiskDTO;
 import lv.javaguru.travel.insurance.core.api.dto.ValidationErrorDTO;
+import lv.javaguru.travel.insurance.core.underwriting.TravelPremiumCalculationResult;
+import lv.javaguru.travel.insurance.core.underwriting.TravelPremiumUnderwriting;
 import lv.javaguru.travel.insurance.core.validations.TravelAgreementValidator;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,7 +18,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
@@ -22,8 +25,7 @@ import static org.mockito.Mockito.*;
 public class TravelCalculatePremiumServiceImplTest {
 
     @Mock private TravelAgreementValidator agreementValidator;
-    @Mock private AgreementPersonsPremiumCalculator agreementPersonsPremiumCalculator;
-    @Mock private AgreementTotalPremiumCalculator agreementTotalPremiumCalculator;
+    @Mock private TravelPremiumUnderwriting premiumUnderwriting;
 
     @InjectMocks
     private TravelCalculatePremiumServiceImpl premiumService;
@@ -41,24 +43,48 @@ public class TravelCalculatePremiumServiceImplTest {
         assertEquals(result.getErrors().size(), 1);
         assertEquals(result.getErrors().get(0).getErrorCode(), "Error code");
         assertEquals(result.getErrors().get(0).getDescription(), "Error description");
-        verifyNoInteractions(agreementPersonsPremiumCalculator, agreementPersonsPremiumCalculator);
+        verify(premiumUnderwriting, never()).calculatePremium(any(), any());
     }
 
     @Test
-    public void shouldCalculatePersonsPremium() {
+    public void shouldReturnPremiumForOnePerson() {
+        var person = new PersonDTO();
         var agreement = new AgreementDTO();
-        when(agreementValidator.validate(agreement)).thenReturn(Collections.emptyList());
-        premiumService.calculatePremium(new TravelCalculatePremiumCoreCommand(agreement));
-        verify(agreementPersonsPremiumCalculator).calculateRiskPremiums(agreement);
-    }
+        agreement.setPersons(List.of(person));
 
-    @Test
-    public void shouldCalculateAgreementTotalPremium() {
-        var agreement = new AgreementDTO();
         when(agreementValidator.validate(agreement)).thenReturn(Collections.emptyList());
-        when(agreementTotalPremiumCalculator.calculate(agreement)).thenReturn(BigDecimal.ONE);
+
+        var risk = new RiskDTO("TRAVEL_MEDICAL", BigDecimal.ONE);
+        TravelPremiumCalculationResult calculationResult = new TravelPremiumCalculationResult(BigDecimal.ONE, List.of(risk));
+        when(premiumUnderwriting.calculatePremium(agreement, person))
+                .thenReturn(calculationResult);
+
         TravelCalculatePremiumCoreResult result = premiumService.calculatePremium(new TravelCalculatePremiumCoreCommand(agreement));
-        assertEquals(result.getAgreement().getAgreementPremium(), BigDecimal.ONE);
+
+        assertEquals(BigDecimal.ONE, result.getAgreement().getAgreementPremium());
+        verify(premiumUnderwriting, times(1)).calculatePremium(eq(agreement), any(PersonDTO.class));
+    }
+
+    @Test
+    public void shouldReturnPremiumForTwoPersons() {
+        var person1 = new PersonDTO();
+        var person2 = new PersonDTO();
+        var agreement = new AgreementDTO();
+        agreement.setPersons(List.of(person1, person2));
+
+        when(agreementValidator.validate(agreement)).thenReturn(Collections.emptyList());
+
+        var risk1 = new RiskDTO("TRAVEL_MEDICAL", BigDecimal.ONE);
+        var risk2 = new RiskDTO("TRAVEL_MEDICAL", BigDecimal.ONE);
+        when(premiumUnderwriting.calculatePremium(agreement, person1))
+                .thenReturn(new TravelPremiumCalculationResult(BigDecimal.ONE, List.of(risk1)));
+        when(premiumUnderwriting.calculatePremium(agreement, person2))
+                .thenReturn(new TravelPremiumCalculationResult(BigDecimal.ONE, List.of(risk2)));
+
+        TravelCalculatePremiumCoreResult result = premiumService.calculatePremium(new TravelCalculatePremiumCoreCommand(agreement));
+
+        assertEquals(BigDecimal.valueOf(2), result.getAgreement().getAgreementPremium());
+        verify(premiumUnderwriting, times(2)).calculatePremium(eq(agreement), any(PersonDTO.class));
     }
 
 }

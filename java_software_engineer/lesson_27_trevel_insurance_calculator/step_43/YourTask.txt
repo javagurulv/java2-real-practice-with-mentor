@@ -1,19 +1,53 @@
-Ментор обратил ваше внимание на то, что после перевода системы
-на коды ошибок в коде осталось много повторений. Это касается
-кода создания экземпляров класса ValidationError:
+Ментор обратил ваше внимание на проблему возникшую при
+написании тестов на контроллер. Суть проблемы в следующем.
+Для сравнения JSON строк на данный момент используется
+следующий код из класса TravelCalculatePremiumControllerTest:
 
-    private ValidationError buildError(String errorCode) {
-        String errorDescription = errorCodeUtil.getErrorDescription(errorCode);
-        return new ValidationError(errorCode, errorDescription);
+ObjectMapper mapper = new ObjectMapper();
+assertEquals(mapper.readTree(responseBodyContent), mapper.readTree(jsonResponse));
+
+Проблема в том, что если сравниваемые JSON строки отличаются
+друг от друга только перестановкой элементов, содержат одни
+и те же элементы только в разном порядке то код выше считает
+такие JSON строки разными.
+
+Например, следующие два JSON строки будут разные:
+
+{"errors":[
+  {
+    "field":"agreementDateFrom",
+    "message":"Must not be empty!"
+  },
+  {
+    "field":"agreementDateTo",
+    "message":"Must not be empty!"
+  }
+]}
+
+{"errors":[
+  {
+    "field":"agreementDateTo",
+    "message":"Must not be empty!"
+  },
+  {
+      "field":"agreementDateFrom",
+      "message":"Must not be empty!"
     }
-
-Ментор предлагает вынести этот кусочек кода в класс
-ValidationErrorFactory и пользоваться этим классом
-во всех местах программы где нужно создавать экземпляр
-класса ошибки.
+]}
 
 
-Ваша задача: реализовать предложение ментора.
+Ваша задача: проверить проблему на которую обратил внимание ментор
+и найти решение этой проблемы. Цель - найти решение для сравнения
+контента JSON строк без учёта порядка расположения элементов.
+Проверить найденное решение и заменить старое решение на новое
+в проекте.
 
-PS: так же найдите информацию про дизайн паттерн Factory
-в интернете и ознакомьтесь с ней.
+Подсказка от ментора:
+https://www.baeldung.com/json-modelassert
+testImplementation('uk.org.webcompere:model-assert:1.0.0')
+
+        assertJson(responseBodyContent)
+                .where()
+                    .keysInAnyOrder()
+                    .arrayInAnyOrder()
+                .isEqualTo(jsonResponse);

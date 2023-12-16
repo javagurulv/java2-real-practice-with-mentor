@@ -1,5 +1,6 @@
 package lv.javaguru.travel.insurance.core.validations;
 
+import lv.javaguru.travel.insurance.core.ErrorCodeUtil;
 import lv.javaguru.travel.insurance.dto.TravelCalculatePremiumRequest;
 import lv.javaguru.travel.insurance.dto.ValidationError;
 import org.junit.jupiter.api.Test;
@@ -13,14 +14,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class AgreementDateToValidationTest {
 
-    @Mock private ValidationErrorFactory errorFactory;
+    @Mock private ErrorCodeUtil errorCodeUtil;
 
     @InjectMocks
     private AgreementDateToValidation validation;
@@ -29,11 +30,11 @@ class AgreementDateToValidationTest {
     public void shouldReturnErrorWhenAgreementDateToIsNull() {
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         when(request.getAgreementDateTo()).thenReturn(null);
-        ValidationError validationError = mock(ValidationError.class);
-        when(errorFactory.buildError("ERROR_CODE_4")).thenReturn(validationError);
+        when(errorCodeUtil.getErrorDescription("ERROR_CODE_4")).thenReturn("error description");
         Optional<ValidationError> errorOpt = validation.execute(request);
         assertTrue(errorOpt.isPresent());
-        assertSame(errorOpt.get(), validationError);
+        assertEquals(errorOpt.get().getErrorCode(), "ERROR_CODE_4");
+        assertEquals(errorOpt.get().getDescription(), "error description");
     }
 
     @Test
@@ -42,7 +43,7 @@ class AgreementDateToValidationTest {
         when(request.getAgreementDateTo()).thenReturn(createDate("01.01.2025"));
         Optional<ValidationError> errorOpt = validation.execute(request);
         assertTrue(errorOpt.isEmpty());
-        verifyNoInteractions(errorFactory);
+        verifyNoInteractions(errorCodeUtil);
     }
 
     private Date createDate(String dateStr) {
