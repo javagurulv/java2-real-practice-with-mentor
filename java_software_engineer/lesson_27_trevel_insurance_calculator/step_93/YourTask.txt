@@ -1,52 +1,21 @@
-Ментор предлагает начать подготовку программного кода для внедрения
-новой версии (поддерживающей нескольких персон) с разделения валидаций
-на два уровня: полис (agreement) и персона.
+Клиент в срочном порядке попросил создать в приложении
+веб страницу с расчётом премии. Клиент хочет дать возможность
+своим сотрудникам и партнёрам использовать веб страницу для
+более удобной работы сотрудников с приложением.
 
-Ментор обосновывает свое предложение так: из новой структуры запроса
+Ментор внёс изменения в приложение и создал требуемую веб страницу.
 
-New Request format:
-
-{
-  "agreementDateFrom" : "2025-05-25",
-  "agreementDateTo" : "2025-05-29",
-  "country" : "SPAIN",
-  "medicalRiskLimitLevel" : "LEVEL_10000",
-  "selected_risks":["TRAVEL_MEDICAL"],
-  "persons" : [
-        {
-          "personFirstName" : "Vasja",
-          "personLastName" : "Pupkin",
-          "personBirthDate" : "2000-05-29"
-        },
-        {
-          "personFirstName" : "Petja",
-          "personLastName" : "Pupkin",
-          "personBirthDate" : "2000-02-29"
-        }
-  ]
-}
-
-видно, что есть поля относящиеся к самому полису
-  "agreementDateFrom" : "2025-05-25",
-  "agreementDateTo" : "2025-05-29",
-  "country" : "SPAIN",
-  "medicalRiskLimitLevel" : "LEVEL_10000",
-  "selected_risks":["TRAVEL_MEDICAL"]
-
-а есть поля, которые относятся к персоне:
-        {
-          "personFirstName" : "Vasja",
-          "personLastName" : "Pupkin",
-          "personBirthDate" : "2000-05-29"
-        }
-
-Валидации для полей полиса нужно в новой версии выполнить только
-один раз, а поля персоны нужно проверить для каждой персоны отдельно.
-
-Поэтому нужен способ, который позволит разделить валидации на
-два уровня: полис и персона.
-
+Изменения коснулись:
+teacher/step_85/build.gradle - добавлена зависимость Thymeleaf
+teacher/step_85/src/main/resources/application.properties - добавлена конфигурация Thymeleaf
+teacher/step_85/src/main/resources/templates - добавлен шаблон страницы на Thymeleaf
+teacher/step_85/src/main/java/lv/javaguru/java2/insurance/web - добавлен контроллер веб страницы
+teacher/step_85/src/main/java/lv/javaguru/java2/insurance/rest/TravelCalculatePremiumController.java - изменён URL
+teacher/step_85/src/test/java/lv/javaguru/java2/insurance/rest/TravelCalculatePremiumControllerTestCase.java - изменён URL
 
 Ваша задача:
-придумать как можно реализовать предложение ментора, обсудить
-вашу идею с ментором и реализовать ее.
+
+Разобраться с изменениями сделанными менторов в приложении.
+Узнать про HTTP GET, POST, Thymeleaf, URL, HTML.
+Прояснить при помощи интернета или задать все возникшие вопросы ментору.
+Запустить приложение и по тестировать созданную ментором веб страницу.

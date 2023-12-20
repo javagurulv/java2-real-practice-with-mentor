@@ -1,30 +1,53 @@
-Для реализации расчёта премии на основе рисков ментор предлагает
-сделать следующие архитектурные изменения в пакете core.underwriting:
+Продолжаем работу над заданием:
+Ментор предлагает воспользоваться классом ClassifierValueRepository
+и его методом findByClassifierTitleAndIc(...) для создания
+новой валидации. Новая валидация должна проверять значения selected_risks
+в запросе. Все значения указанные в selected_risks должны
+быть значениями ic (ClassifierValue.ic) классификатора RISK_TYPE
+из базы данных. Для каждого не верного значения в selected_risks
+валидация должна возвращать ошибку:
+Риск с ic = NOT_EXISTING_RISK не поддерживается системой.
 
-Создать интерфейс TravelRiskPremiumCalculator с методами
 
-BigDecimal calculatePremium(TravelCalculatePremiumRequest request);
-String getRiskIc();
+Для реализации поставленного выше задания ментор предлагает
+внести в код следующие архитектурные изменения:
 
-Для каждого из следующих рисков:
-               TRAVEL_MEDICAL
-               TRAVEL_CANCELLATION
-               TRAVEL_LOSS_BAGGAGE
-               TRAVEL_THIRD_PARTY_LIABILITY
-               TRAVEL_EVACUATION
-               TRAVEL_SPORT_ACTIVITIES
-создать свою реализацию интерфейса TravelRiskPremiumCalculator.
-Метод getRiskIc() каждой реализации будет возвращать ic код риска
-для которого он содержит алгоритм расчёта премии.
+В интерфейсе TravelRequestValidation переименовать метод
+execute(...) -> validate(...).
 
-По дефолту метод calculatePremium(...) должен возвращать 0 (BigDecimal.ZERO).
+Добавить в интерфейс TravelRequestValidation новый метод:
+List<ValidationError> validateList(TravelCalculatePremiumRequest request);
+Этот новый метод позволит возвращать список ошибок при валидации.
 
-Для TRAVEL_MEDICAL риска на данный момент оставить текущую
-формулу расчёта из класса TravelPremiumUnderwritingImpl.
+Для минимизации эффекта изменений в интерфейсе TravelRequestValidation
+на уже существующий код (чтобы не реализовывать новый метод в каждом
+классе валидации) предлагается создать абстрактный класс с дефолтными
+реализациями методов:
 
-Далее в TravelPremiumUnderwritingImpl в зависимости получить
-список всех TravelRiskPremiumCalculator и с помощью него
-посчитать премии для каждого выбранного в запросе риска (selected_risks)
-и сложить их.
+abstract class TravelRequestValidationImpl
+    implements TravelRequestValidation {
+
+    @Override
+    Optional<ValidationError> validate(TravelCalculatePremiumRequest request) {
+        return Optional.empty();
+    }
+
+    @Override
+    List<ValidationError> validateList(TravelCalculatePremiumRequest request) {
+        return List.of();
+    }
+
+}
+
+После этого все классы валидаций должны наследоваться от
+TravelRequestValidationImpl и переопределять только тот метод
+валидации, который им нужен.
+
+
+Далее внести в класс TravelCalculatePremiumRequestValidatorImpl
+изменения, так чтобы он вызывал у валидации оба метода
+(как validate(...) так и validateList(...)) и собирал полученные
+ошибки в один список.
+
 
 Ваша задача: реализовать предложение ментора.

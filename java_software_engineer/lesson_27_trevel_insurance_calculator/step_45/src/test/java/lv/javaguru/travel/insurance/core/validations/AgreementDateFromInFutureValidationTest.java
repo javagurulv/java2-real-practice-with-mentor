@@ -14,15 +14,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class AgreementDateFromInFutureValidationTest {
 
     @Mock private DateTimeService dateTimeService;
-    @Mock private ValidationErrorFactory errorFactory;
 
     @InjectMocks
     private AgreementDateFromInFutureValidation validation;
@@ -32,11 +32,10 @@ class AgreementDateFromInFutureValidationTest {
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         when(request.getAgreementDateFrom()).thenReturn(createDate("01.01.2020"));
         when(dateTimeService.getCurrentDateTime()).thenReturn(createDate("01.01.2023"));
-        ValidationError validationError = mock(ValidationError.class);
-        when(errorFactory.buildError("ERROR_CODE_1")).thenReturn(validationError);
         Optional<ValidationError> errorOpt = validation.execute(request);
         assertTrue(errorOpt.isPresent());
-        assertSame(errorOpt.get(), validationError);
+        assertEquals(errorOpt.get().getField(), "agreementDateFrom");
+        assertEquals(errorOpt.get().getMessage(), "Must be in the future!");
     }
 
     @Test
@@ -46,7 +45,6 @@ class AgreementDateFromInFutureValidationTest {
         when(dateTimeService.getCurrentDateTime()).thenReturn(createDate("01.01.2023"));
         Optional<ValidationError> errorOpt = validation.execute(request);
         assertTrue(errorOpt.isEmpty());
-        verifyNoInteractions(errorFactory);
     }
 
     private Date createDate(String dateStr) {

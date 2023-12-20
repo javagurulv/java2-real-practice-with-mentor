@@ -1,8 +1,26 @@
-Ваша задача:
-1. По аналогии с AgreementDTOBuilder и PersonDTOBuilder
-создайте билдер для класса RiskDTO.
+Ментор сообщил радостную новость!
 
-2. Напишите самостоятельно по примеру
-AgreementDateFromValidationIntegrationTest интеграционные тесты
-для нескольких других классов (для проверки других полей). При написании
-тестов воспользуйтесь созданными классами Builders.
+Бизнес начал тестировать вторую версию приложения.
+
+Среди тестов проведённых бизнесом были следующие:
+
+Test Case:
+Request: selectedRisks is not supported (one risk).
+Response: error code = ERROR_CODE_6.
+
+Test Case:
+Request: selectedRisks is not supported (two risks).
+Response: multiple error codes = ERROR_CODE_6.
+
+Test Case:
+Request: country is null, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_10.
+
+Test Case:
+Request: country is empty, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_10.
+
+Ментор просит вас, проверить есть ли автоматические
+тесты на указанные выше сценарии. Если их нет, то создайте их.
+
+Ваша задача: выполнить пожелание ментора.

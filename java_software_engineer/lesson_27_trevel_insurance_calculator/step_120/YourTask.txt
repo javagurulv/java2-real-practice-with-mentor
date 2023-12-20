@@ -1,1 +1,3 @@
-Ваша задача: реализовать web часть для второй версии приложения.
+Ваша задача: по аналогии с AgreementDTOBuilder создайте билдер для
+класса PersonDTO и воспользуйтесь им в коде тестового класса
+AgreementDateFromValidationIntegrationTest.

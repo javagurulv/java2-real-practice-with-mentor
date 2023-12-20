@@ -1,5 +1,6 @@
 package lv.javaguru.travel.insurance.core.validations;
 
+import lv.javaguru.travel.insurance.core.ErrorCodeUtil;
 import lv.javaguru.travel.insurance.dto.TravelCalculatePremiumRequest;
 import lv.javaguru.travel.insurance.dto.ValidationError;
 import org.junit.jupiter.api.Test;
@@ -10,14 +11,14 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class PersonFirstNameValidationTest {
 
-    @Mock private ValidationErrorFactory errorFactory;
+    @Mock private ErrorCodeUtil errorCodeUtil;
 
     @InjectMocks
     private PersonFirstNameValidation validation;
@@ -26,22 +27,22 @@ class PersonFirstNameValidationTest {
     public void shouldReturnErrorWhenPersonFirstNameIsNull() {
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         when(request.getPersonFirstName()).thenReturn(null);
-        ValidationError validationError = mock(ValidationError.class);
-        when(errorFactory.buildError("ERROR_CODE_7")).thenReturn(validationError);
+        when(errorCodeUtil.getErrorDescription("ERROR_CODE_7")).thenReturn("error description");
         Optional<ValidationError> errorOpt = validation.execute(request);
         assertTrue(errorOpt.isPresent());
-        assertSame(errorOpt.get(), validationError);
+        assertEquals(errorOpt.get().getErrorCode(), "ERROR_CODE_7");
+        assertEquals(errorOpt.get().getDescription(), "error description");
     }
 
     @Test
     public void shouldReturnErrorWhenPersonFirstNameIsEmpty() {
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         when(request.getPersonFirstName()).thenReturn("");
-        ValidationError validationError = mock(ValidationError.class);
-        when(errorFactory.buildError("ERROR_CODE_7")).thenReturn(validationError);
+        when(errorCodeUtil.getErrorDescription("ERROR_CODE_7")).thenReturn("error description");
         Optional<ValidationError> errorOpt = validation.execute(request);
         assertTrue(errorOpt.isPresent());
-        assertSame(errorOpt.get(), validationError);
+        assertEquals(errorOpt.get().getErrorCode(), "ERROR_CODE_7");
+        assertEquals(errorOpt.get().getDescription(), "error description");
     }
 
     @Test
@@ -50,7 +51,7 @@ class PersonFirstNameValidationTest {
         when(request.getPersonFirstName()).thenReturn("Vasja");
         Optional<ValidationError> errorOpt = validation.execute(request);
         assertTrue(errorOpt.isEmpty());
-        verifyNoInteractions(errorFactory);
+        verifyNoInteractions(errorCodeUtil);
     }
 
 }

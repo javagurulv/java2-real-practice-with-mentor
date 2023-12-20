@@ -3,7 +3,6 @@ package lv.javaguru.travel.insurance.core.services;
 import lv.javaguru.travel.insurance.core.api.command.TravelCalculatePremiumCoreCommand;
 import lv.javaguru.travel.insurance.core.api.command.TravelCalculatePremiumCoreResult;
 import lv.javaguru.travel.insurance.core.api.dto.AgreementDTO;
-import lv.javaguru.travel.insurance.core.api.dto.PersonDTO;
 import lv.javaguru.travel.insurance.core.api.dto.ValidationErrorDTO;
 import lv.javaguru.travel.insurance.core.validations.TravelAgreementValidator;
 import org.junit.jupiter.api.Test;
@@ -25,7 +24,6 @@ public class TravelCalculatePremiumServiceImplTest {
     @Mock private TravelAgreementValidator agreementValidator;
     @Mock private AgreementPersonsPremiumCalculator agreementPersonsPremiumCalculator;
     @Mock private AgreementTotalPremiumCalculator agreementTotalPremiumCalculator;
-    @Mock private AgreementEntityFactory agreementEntityFactory;
 
     @InjectMocks
     private TravelCalculatePremiumServiceImpl premiumService;
@@ -43,34 +41,20 @@ public class TravelCalculatePremiumServiceImplTest {
         assertEquals(result.getErrors().size(), 1);
         assertEquals(result.getErrors().get(0).getErrorCode(), "Error code");
         assertEquals(result.getErrors().get(0).getDescription(), "Error description");
-        verifyNoInteractions(agreementPersonsPremiumCalculator, agreementPersonsPremiumCalculator, agreementEntityFactory);
+        verifyNoInteractions(agreementPersonsPremiumCalculator, agreementPersonsPremiumCalculator);
     }
 
     @Test
     public void shouldCalculatePersonsPremium() {
-        var person = new PersonDTO();
         var agreement = new AgreementDTO();
-        agreement.setPersons(List.of(person));
         when(agreementValidator.validate(agreement)).thenReturn(Collections.emptyList());
         premiumService.calculatePremium(new TravelCalculatePremiumCoreCommand(agreement));
         verify(agreementPersonsPremiumCalculator).calculateRiskPremiums(agreement);
     }
 
     @Test
-    public void shouldSaveAgreement() {
-        var person = new PersonDTO();
-        var agreement = new AgreementDTO();
-        agreement.setPersons(List.of(person));
-        when(agreementValidator.validate(agreement)).thenReturn(Collections.emptyList());
-        premiumService.calculatePremium(new TravelCalculatePremiumCoreCommand(agreement));
-        verify(agreementEntityFactory).createAgreementEntity(agreement);
-    }
-
-    @Test
     public void shouldCalculateAgreementTotalPremium() {
-        var person = new PersonDTO();
         var agreement = new AgreementDTO();
-        agreement.setPersons(List.of(person));
         when(agreementValidator.validate(agreement)).thenReturn(Collections.emptyList());
         when(agreementTotalPremiumCalculator.calculate(agreement)).thenReturn(BigDecimal.ONE);
         TravelCalculatePremiumCoreResult result = premiumService.calculatePremium(new TravelCalculatePremiumCoreCommand(agreement));

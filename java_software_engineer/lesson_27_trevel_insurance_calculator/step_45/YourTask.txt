@@ -1,19 +1,21 @@
-Ментор обратил ваше внимание на то, что после перевода системы
-на коды ошибок в коде осталось много повторений. Это касается
-кода создания экземпляров класса ValidationError:
+Ваша задача: добавить в запрос (TravelCalculatePremiumRequest)
+секцию selected_risks и внести соответствующие изменения в Java код,
+чтобы секция selected_risks парсилась в Java класс запроса:
 
-    private ValidationError buildError(String errorCode) {
-        String errorDescription = errorCodeUtil.getErrorDescription(errorCode);
-        return new ValidationError(errorCode, errorDescription);
-    }
+{
+  "personFirstName" : "Vasja",
+  "personLastName" : "Pupkin",
+  "agreementDateFrom" : "2025-05-25",
+  "agreementDateTo" : "2025-05-29",
+  "selected_risks":["TRAVEL_MEDICAL", "TRAVEL_CANCELLATION", "TRAVEL_LOSS_BAGGAGE"]
+}
 
-Ментор предлагает вынести этот кусочек кода в класс
-ValidationErrorFactory и пользоваться этим классом
-во всех местах программы где нужно создавать экземпляр
-класса ошибки.
+selected_risks - это массив строк, каждая строка содержит IC код
+из классификатора RISK_TYPE.
 
-
-Ваша задача: реализовать предложение ментора.
-
-PS: так же найдите информацию про дизайн паттерн Factory
-в интернете и ознакомьтесь с ней.
+PS: никаких валидаций и проверок на данном этапе делать не надо.
+После внесения изменений запустите приложение, через Postman
+отправьте запрос с секцией selected_risks и убедитесь в дебаге,
+что в Java коде данные будут доступны для дальнейшей обработки.
+Так же можете проверить залогируется секция selected_risks и ее
+значения в лог файл или нет.

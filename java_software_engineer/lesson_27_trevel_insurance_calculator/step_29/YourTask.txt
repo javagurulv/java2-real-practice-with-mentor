@@ -1,6 +1,17 @@
-Ваша задача: превратите ответ (TravelCalculatePremiumResponse)
-в строку (формат JSON) и залогируйте его в систему логирования.
+Ментор обратил ваше внимание на то, что после добавления
+очередных валидаций класс TravelCalculatePremiumRequestValidator
+сильно увеличился. На данный момент техническая реализация
+валидаций не поддерживает лёгкое её расширение.
 
+Ментор предложил вам следующую идею рефакторинга:
+- создать интерфейс TravelRequestValidation;
+- создать для каждой валидации свой класс,
+  который наследуется от TravelRequestValidation;
+- в TravelCalculatePremiumRequestValidator заавтоварить
+List<TravelRequestValidation> со всеми валидациями
+выполнить все валидации из списка, собрать все ошибки и
+вернуть их.
 
-Примерный ожидаемый результат на консоли:
-2023-03-13 07:54:56,629 [http-nio-8080-exec-2] INFO  l.j.j.i.r.TravelCalculatePremiumResponseLogger - RESPONSE: {"errors":null,"personFirstName":"Vasja","personLastName":"Pupkin","agreementDateFrom":"2025-01-01","agreementDateTo":"2025-01-10","agreementPrice":9}
+Ваша задача: реализовать это предложение.
+
+PS: не забудьте при реализации исправить все тесты.
