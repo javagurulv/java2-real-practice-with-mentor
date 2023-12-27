@@ -22,3 +22,6 @@ https://www.amazon.com/Robert-Martinand-Professional-Programmers-Paperback/dp/B0
 TravelCalculatePremiumServiceImpl, провести рефакторинг
 если это возможно. Цель рефакторинга - улучшить читабельность
 кода и подготовить его к будущим изменениям.
+
+Подсказка: попробуйте при рефакторинге воспользоваться
+функциональным стилем написания кода.
