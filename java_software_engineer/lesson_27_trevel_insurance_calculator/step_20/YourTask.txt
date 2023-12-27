@@ -18,6 +18,7 @@ Second edition: https://www.amazon.com/Refactoring-Improving-Existing-Addison-We
 На тему clean code классикой является The Clean Coder (by Robert C. Martin):
 https://www.amazon.com/Robert-Martinand-Professional-Programmers-Paperback/dp/B07VK8VZ9B
 
-Ваша задача: написать тесты для класса
-TravelCalculatePremiumServiceImpl и улучшить
-его код (провести рефакторинг) если это возможно.
+Ваша задача: улучшить код в классе
+TravelCalculatePremiumServiceImpl, провести рефакторинг
+если это возможно. Цель рефакторинга - улучшить читабельность
+кода и подготовить его к будущим изменениям.
