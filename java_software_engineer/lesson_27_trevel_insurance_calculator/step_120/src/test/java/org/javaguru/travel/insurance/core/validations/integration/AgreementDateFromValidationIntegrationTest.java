@@ -1,6 +1,5 @@
 package org.javaguru.travel.insurance.core.validations.integration;
 
-import lv.javaguru.travel.insurance.core.api.dto.*;
 import org.javaguru.travel.insurance.core.api.dto.*;
 import org.javaguru.travel.insurance.core.validations.TravelAgreementValidator;
 import org.junit.jupiter.api.Test;
