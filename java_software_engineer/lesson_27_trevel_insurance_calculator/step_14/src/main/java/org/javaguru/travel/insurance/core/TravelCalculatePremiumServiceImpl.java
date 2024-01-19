@@ -1,27 +1,19 @@
 package org.javaguru.travel.insurance.core;
 
-import org.javaguru.travel.insurance.dto.TravelCalculatePremiumRequest;
-import org.javaguru.travel.insurance.dto.TravelCalculatePremiumResponse;
-import org.javaguru.travel.insurance.dto.ValidationError;
+import org.javaguru.travel.insurance.rest.TravelCalculatePremiumRequest;
+import org.javaguru.travel.insurance.rest.TravelCalculatePremiumResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Component
 class TravelCalculatePremiumServiceImpl implements TravelCalculatePremiumService {
 
-    @Autowired private TravelCalculatePremiumRequestValidator requestValidator;
     @Autowired private DateTimeService dateTimeService;
 
     @Override
     public TravelCalculatePremiumResponse calculatePremium(TravelCalculatePremiumRequest request) {
-        List<ValidationError> errors = requestValidator.validate(request);
-        if (!errors.isEmpty()) {
-            return new TravelCalculatePremiumResponse(errors);
-        }
-
         TravelCalculatePremiumResponse response = new TravelCalculatePremiumResponse();
         response.setPersonFirstName(request.getPersonFirstName());
         response.setPersonLastName(request.getPersonLastName());

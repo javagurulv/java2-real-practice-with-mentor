@@ -1,5 +1,6 @@
 package org.javaguru.travel.insurance.core.validations;
 
+import org.javaguru.travel.insurance.core.ErrorCodeUtil;
 import org.javaguru.travel.insurance.dto.TravelCalculatePremiumRequest;
 import org.javaguru.travel.insurance.dto.ValidationError;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import java.util.Optional;
 @Component
 class DateFromLessThenDateToValidation implements TravelRequestValidation {
 
-    @Autowired private ValidationErrorFactory errorFactory;
+    @Autowired private ErrorCodeUtil errorCodeUtil;
 
     @Override
     public Optional<ValidationError> execute(TravelCalculatePremiumRequest request) {
@@ -19,8 +20,13 @@ class DateFromLessThenDateToValidation implements TravelRequestValidation {
         Date dateTo = request.getAgreementDateTo();
         return (dateFrom != null && dateTo != null
                 && (dateFrom.equals(dateTo) || dateFrom.after(dateTo)))
-                ? Optional.of(errorFactory.buildError("ERROR_CODE_5"))
+                ? Optional.of(buildError("ERROR_CODE_5"))
                 : Optional.empty();
+    }
+
+    private ValidationError buildError(String errorCode) {
+        String errorDescription = errorCodeUtil.getErrorDescription(errorCode);
+        return new ValidationError(errorCode, errorDescription);
     }
 
 }

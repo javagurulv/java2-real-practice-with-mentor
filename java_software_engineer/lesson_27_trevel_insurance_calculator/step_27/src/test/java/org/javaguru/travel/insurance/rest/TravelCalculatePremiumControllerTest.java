@@ -24,60 +24,13 @@ public class TravelCalculatePremiumControllerTest {
     @Autowired private MockMvc mockMvc;
 
     @Autowired private JsonFileReader jsonFileReader;
+    private ObjectMapper mapper = new ObjectMapper();
 
     @Test
-    public void successRequest() throws Exception {
+    public void simpleRestControllerTest() throws Exception {
         executeAndCompare(
-                "rest/TravelCalculatePremiumRequest_success.json",
-                "rest/TravelCalculatePremiumResponse_success.json"
-        );
-    }
-
-    @Test
-    public void firstNameNotProvided() throws Exception {
-        executeAndCompare(
-                "rest/TravelCalculatePremiumRequest_firstName_not_provided.json",
-                "rest/TravelCalculatePremiumResponse_firstName_not_provided.json"
-        );
-    }
-
-    @Test
-    public void lastNameNotProvided() throws Exception {
-        executeAndCompare(
-                "rest/TravelCalculatePremiumRequest_lastName_not_provided.json",
-                "rest/TravelCalculatePremiumResponse_lastName_not_provided.json"
-        );
-    }
-
-    @Test
-    public void agreementDateFromNotProvided() throws Exception {
-        executeAndCompare(
-                "rest/TravelCalculatePremiumRequest_agreementDateFrom_not_provided.json",
-                "rest/TravelCalculatePremiumResponse_agreementDateFrom_not_provided.json"
-        );
-    }
-
-    @Test
-    public void agreementDateToNotProvided() throws Exception {
-        executeAndCompare(
-                "rest/TravelCalculatePremiumRequest_agreementDateTo_not_provided.json",
-                "rest/TravelCalculatePremiumResponse_agreementDateTo_not_provided.json"
-        );
-    }
-
-    @Test
-    public void agreementDateToLessThenAgreementDateFrom() throws Exception {
-        executeAndCompare(
-                "rest/TravelCalculatePremiumRequest_dateTo_lessThen_dateFrom.json",
-                "rest/TravelCalculatePremiumResponse_dateTo_lessThen_dateFrom.json"
-        );
-    }
-
-    @Test
-    public void allFieldsNotProvided() throws Exception {
-        executeAndCompare(
-                "rest/TravelCalculatePremiumRequest_allFields_not_provided.json",
-                "rest/TravelCalculatePremiumResponse_allFields_not_provided.json"
+                "rest/TravelCalculatePremiumRequest.json",
+                "rest/TravelCalculatePremiumResponse.json"
         );
     }
 
@@ -95,7 +48,6 @@ public class TravelCalculatePremiumControllerTest {
 
         String jsonResponse = jsonFileReader.readJsonFromFile(jsonResponseFilePath);
 
-        ObjectMapper mapper = new ObjectMapper();
         assertEquals(mapper.readTree(responseBodyContent), mapper.readTree(jsonResponse));
     }
 
