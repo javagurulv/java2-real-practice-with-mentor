@@ -1,29 +1,22 @@
 package lv.javaguru.travel.insurance;
 
 import java.io.IOException;
-import java.nio.file.FileAlreadyExistsException;
-import java.nio.file.FileVisitOption;
-import java.nio.file.FileVisitResult;
-import java.nio.file.FileVisitOption;
-import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.util.EnumSet;
 
 
 public class RenameDirectories {
 
     public static void main(String[] args) {
 
-        for (int i = 163; i >= 9; i--) {
+        for (int i = 167; i >= 7; i--) {
             String sourceDirPath = "C:\\javaguru\\projects\\java2-real-practice-with-mentor\\java_software_engineer\\lesson_27_trevel_insurance_calculator\\step_";
             String targetDirPath = "C:\\javaguru\\projects\\java2-real-practice-with-mentor\\java_software_engineer\\lesson_27_trevel_insurance_calculator\\step_";
 
             sourceDirPath = sourceDirPath + i;
-            targetDirPath = targetDirPath + (i + 4);
+            targetDirPath = targetDirPath + (i + 1);
             renameDir(sourceDirPath, targetDirPath);
         }
 
