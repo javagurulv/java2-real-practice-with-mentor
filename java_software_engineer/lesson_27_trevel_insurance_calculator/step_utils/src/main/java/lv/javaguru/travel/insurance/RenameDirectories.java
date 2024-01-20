@@ -11,7 +11,7 @@ public class RenameDirectories {
 
     public static void main(String[] args) {
 
-        for (int i = 167; i >= 7; i--) {
+        for (int i = 168; i >= 12; i--) {
             String sourceDirPath = "C:\\javaguru\\projects\\java2-real-practice-with-mentor\\java_software_engineer\\lesson_27_trevel_insurance_calculator\\step_";
             String targetDirPath = "C:\\javaguru\\projects\\java2-real-practice-with-mentor\\java_software_engineer\\lesson_27_trevel_insurance_calculator\\step_";
 
