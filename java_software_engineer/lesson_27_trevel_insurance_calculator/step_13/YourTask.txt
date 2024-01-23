@@ -100,7 +100,7 @@ PS: если у вас не получится перевести тест на 
 Мок объекты и их применение для эффективного написания юнит тестов
 очень важный инструмент, который мы будем часто применять в нашем проекте.
 
-Best books about JUnit and Testing:
+Best books about JUnit and Testing (в интернете можно найти pdf):
 1. https://www.amazon.com/Pragmatic-Unit-Testing-Java-JUnit/dp/0974514012
 2. https://www.amazon.com/Test-Driven-Acceptance-Java-Developers/dp/1932394850
 3. https://www.amazon.com/JUnit-Action-Second-Edition-Tahchiev/dp/1935182021
