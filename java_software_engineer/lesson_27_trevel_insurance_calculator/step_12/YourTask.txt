@@ -31,3 +31,7 @@ TravelCalculatePremiumServiceImpl больше не используется, у
 Совет: запомните этот прием (вынесение алгоритма в отдельный класс).
 Это очень действенный прием, который широко используется в разработке
 программного обеспечения. Используйте его и вы!
+
+Books about Dependency Injection (Inversion of Control - IoC)
+(в интернете можно найти pdf):
+1. https://www.amazon.com/Dependency-Injection-Examples-Java-Ruby/dp/193398855X
