@@ -51,8 +51,8 @@ public class PersonDTOBuilder {
         return this;
     }
 
-    public PersonDTOBuilder withRisks(List<RiskDTO> risks) {
-        this.risks = risks;
+    public PersonDTOBuilder withRisk(RiskDTOBuilder riskDTOBuilder) {
+        this.risks.add(riskDTOBuilder.build());
         return this;
     }
 

@@ -1,5 +1,6 @@
 package org.javaguru.travel.insurance.core.underwriting;
 
+import org.javaguru.travel.insurance.core.underwriting.TravelPremiumCalculationResult;
 import org.javaguru.travel.insurance.core.underwriting.TravelPremiumUnderwritingImpl;
 import org.javaguru.travel.insurance.core.underwriting.TravelRiskPremiumCalculator;
 import org.javaguru.travel.insurance.dto.TravelCalculatePremiumRequest;
@@ -39,11 +40,10 @@ public class TravelPremiumUnderwritingTest {
     void shouldCalculatePremiumForOneRisk() {
         when(riskPremiumCalculator1.getRiskIc()).thenReturn("TRAVEL_MEDICAL");
         when(riskPremiumCalculator1.calculatePremium(any())).thenReturn(BigDecimal.ONE);
-
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         when(request.getSelectedRisks()).thenReturn(List.of("TRAVEL_MEDICAL"));
-        BigDecimal premium = premiumUnderwriting.calculatePremium(request);
-        assertEquals(premium, BigDecimal.ONE);
+        TravelPremiumCalculationResult premiumCalculationResult = premiumUnderwriting.calculatePremium(request);
+        assertEquals(premiumCalculationResult.getTotalPremium(), BigDecimal.ONE);
     }
 
     @Test
@@ -56,8 +56,8 @@ public class TravelPremiumUnderwritingTest {
 
         TravelCalculatePremiumRequest request = mock(TravelCalculatePremiumRequest.class);
         when(request.getSelectedRisks()).thenReturn(List.of("TRAVEL_MEDICAL", "TRAVEL_EVACUATION"));
-        BigDecimal premium = premiumUnderwriting.calculatePremium(request);
-        assertEquals(premium, new BigDecimal(2));
+        TravelPremiumCalculationResult premiumCalculationResult = premiumUnderwriting.calculatePremium(request);
+        assertEquals(premiumCalculationResult.getTotalPremium(), new BigDecimal(2));
     }
 
 }
