@@ -1,26 +1,26 @@
 package org.javaguru.travel.insurance.core.validations;
 
-import org.javaguru.travel.insurance.core.api.dto.ValidationErrorDTO;
 import org.javaguru.travel.insurance.core.util.ErrorCodeUtil;
 import org.javaguru.travel.insurance.core.util.Placeholder;
+import org.javaguru.travel.insurance.dto.ValidationError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
-public class ValidationErrorFactory {
+class ValidationErrorFactory {
 
     @Autowired private ErrorCodeUtil errorCodeUtil;
 
-    public ValidationErrorDTO buildError(String errorCode) {
+    ValidationError buildError(String errorCode) {
         String errorDescription = errorCodeUtil.getErrorDescription(errorCode);
-        return new ValidationErrorDTO(errorCode, errorDescription);
+        return new ValidationError(errorCode, errorDescription);
     }
 
-    public ValidationErrorDTO buildError(String errorCode, List<Placeholder> placeholders) {
+    ValidationError buildError(String errorCode, List<Placeholder> placeholders) {
         String errorDescription = errorCodeUtil.getErrorDescription(errorCode, placeholders);
-        return new ValidationErrorDTO(errorCode, errorDescription);
+        return new ValidationError(errorCode, errorDescription);
     }
 
 }

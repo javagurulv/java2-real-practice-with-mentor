@@ -1,19 +1,29 @@
-Ментор обратил ваше внимание на то, что после перевода системы
-на коды ошибок в коде осталось много повторений. Это касается
-кода создания экземпляров класса ValidationError:
+Ваша задача: ознакомиться с записями вводных лекций по
+SQL и реляционным базам данных. В этих лекциях и в
+интернете найти ответы на вопросы:
+1. Что такое реляционная база данных?
+2. Что такое СУБД?
+3. Что такое SQL?
+4. Как создавать таблицы в базе данных?
+5. Что такое CRUD операции?
+6. Примеры команды SQL insert.
+7. Примеры команды SQL select
+8. Примеры команды SQL update.
+9. Примеры команды SQL delete.
+10. Что такое связи между таблицами и какие они бывают?
+11. Что такое первичный ключ (primary key)?
+12. Что такое вторичный ключ (foreign key)?
+13. Примеры команды SQL join.
 
-    private ValidationError buildError(String errorCode) {
-        String errorDescription = errorCodeUtil.getErrorDescription(errorCode);
-        return new ValidationError(errorCode, errorDescription);
-    }
+Пройти как можно дальше туториал по SQL:
+https://sqlbolt.com/lesson/select_queries_introduction
 
-Ментор предлагает вынести этот кусочек кода в класс
-ValidationErrorFactory и пользоваться этим классом
-во всех местах программы где нужно создавать экземпляр
-класса ошибки.
+SQL basics:
+Viktor: https://www.youtube.com/watch?v=qIippH729UI
+Ruslan: https://www.youtube.com/watch?v=sBwJOiwizCU
 
+SQL advanced:
+Viktor: https://www.youtube.com/watch?v=H02bJB846GU
+Ruslan: https://www.youtube.com/watch?v=egzYiYNq9hI
 
-Ваша задача: реализовать предложение ментора.
-
-PS: так же найдите информацию про дизайн паттерн Factory
-в интернете и ознакомьтесь с ней.
+Для экспериментов с SQL создайте базу данных на любую тему.

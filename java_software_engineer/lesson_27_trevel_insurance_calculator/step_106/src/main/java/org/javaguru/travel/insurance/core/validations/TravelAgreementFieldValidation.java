@@ -1,15 +1,15 @@
 package org.javaguru.travel.insurance.core.validations;
 
-import org.javaguru.travel.insurance.core.api.dto.AgreementDTO;
-import org.javaguru.travel.insurance.core.api.dto.ValidationErrorDTO;
+import org.javaguru.travel.insurance.dto.TravelCalculatePremiumRequest;
+import org.javaguru.travel.insurance.dto.ValidationError;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface TravelAgreementFieldValidation {
 
-    Optional<ValidationErrorDTO> validate(AgreementDTO agreement);
+    Optional<ValidationError> validate(TravelCalculatePremiumRequest request);
 
-    List<ValidationErrorDTO> validateList(AgreementDTO agreement);
+    List<ValidationError> validateList(TravelCalculatePremiumRequest request);
 
 }

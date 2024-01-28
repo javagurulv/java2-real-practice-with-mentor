@@ -1,9 +1,9 @@
 package org.javaguru.travel.insurance.core.validations.agreement;
 
-import org.javaguru.travel.insurance.core.api.dto.AgreementDTO;
-import org.javaguru.travel.insurance.core.api.dto.ValidationErrorDTO;
 import org.javaguru.travel.insurance.core.repositories.ClassifierValueRepository;
 import org.javaguru.travel.insurance.core.validations.ValidationErrorFactory;
+import org.javaguru.travel.insurance.dto.TravelCalculatePremiumRequest;
+import org.javaguru.travel.insurance.dto.ValidationError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,15 +17,15 @@ class MedicalRiskLimitLevelValidation extends TravelAgreementFieldValidationImpl
 
 
     @Override
-    public Optional<ValidationErrorDTO> validate(AgreementDTO agreement) {
-        return (isMedicalRiskLimitLevelNotBlank(agreement))
-                && !existInDatabase(agreement.getMedicalRiskLimitLevel())
+    public Optional<ValidationError> validate(TravelCalculatePremiumRequest request) {
+        return (isMedicalRiskLimitLevelNotBlank(request))
+                && !existInDatabase(request.getMedicalRiskLimitLevel())
                 ? Optional.of(errorFactory.buildError("ERROR_CODE_14"))
                 : Optional.empty();
     }
 
-    private boolean isMedicalRiskLimitLevelNotBlank(AgreementDTO agreement) {
-        return agreement.getMedicalRiskLimitLevel() != null && !agreement.getMedicalRiskLimitLevel().isBlank();
+    private boolean isMedicalRiskLimitLevelNotBlank(TravelCalculatePremiumRequest request) {
+        return request.getMedicalRiskLimitLevel() != null && !request.getMedicalRiskLimitLevel().isBlank();
     }
 
     private boolean existInDatabase(String medicalRiscLimitLevelIc) {

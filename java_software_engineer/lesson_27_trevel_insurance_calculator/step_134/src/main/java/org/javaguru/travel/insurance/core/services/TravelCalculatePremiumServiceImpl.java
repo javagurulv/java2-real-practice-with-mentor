@@ -7,26 +7,24 @@ import org.javaguru.travel.insurance.core.api.dto.ValidationErrorDTO;
 import org.javaguru.travel.insurance.core.validations.TravelAgreementValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Component
-@Transactional
 class TravelCalculatePremiumServiceImpl implements TravelCalculatePremiumService {
 
     @Autowired private TravelAgreementValidator agreementValidator;
     @Autowired private AgreementPersonsPremiumCalculator agreementPersonsPremiumCalculator;
     @Autowired private AgreementTotalPremiumCalculator agreementTotalPremiumCalculator;
 
-    @Autowired private AgreementEntityFactory agreementEntityFactory;
+    @Autowired private PersonSaver personSaver;
 
     @Override
     public TravelCalculatePremiumCoreResult calculatePremium(TravelCalculatePremiumCoreCommand command) {
         List<ValidationErrorDTO> errors = agreementValidator.validate(command.getAgreement());
         if (errors.isEmpty()) {
             calculatePremium(command.getAgreement());
-            agreementEntityFactory.createAgreementEntity(command.getAgreement());
+            savePersons(command.getAgreement());
             return buildResponse(command.getAgreement());
         } else {
             return buildResponse(errors);
@@ -36,6 +34,10 @@ class TravelCalculatePremiumServiceImpl implements TravelCalculatePremiumService
     private void calculatePremium(AgreementDTO agreement) {
         agreementPersonsPremiumCalculator.calculateRiskPremiums(agreement);
         agreement.setAgreementPremium(agreementTotalPremiumCalculator.calculate(agreement));
+    }
+
+    private void savePersons(AgreementDTO agreement) {
+        agreement.getPersons().forEach(person -> personSaver.savePerson(person));
     }
 
     private TravelCalculatePremiumCoreResult buildResponse(List<ValidationErrorDTO> errors) {

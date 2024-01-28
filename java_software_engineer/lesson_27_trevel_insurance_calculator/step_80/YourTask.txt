@@ -1,5 +1,8 @@
-Ваша задача на данный момент:
-1. Создать в Java доменный объект + репозиторий для написания
-запросов к таблице AGE_COEFFICIENT.
-2. Поменять формулу расчёта медицинского риска на:
-premium = CountryDefaultDayRate * DayCount * AgeCoefficient.
+Ваша задача:
+
+1. Создать таблицу в базе данных COUNTRY_DEFAULT_DAY_RATE
+   (country ic -> country default day rate).
+2. Написать скрипт заполнения таблицы COUNTRY_DEFAULT_DAY_RATE значениями:
+    LATVIA -> 1.00
+    SPAIN -> 2.50
+    JAPAN -> 3.50

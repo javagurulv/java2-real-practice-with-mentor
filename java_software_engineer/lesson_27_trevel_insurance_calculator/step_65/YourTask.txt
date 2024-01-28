@@ -1,30 +1,18 @@
-Для реализации расчёта премии на основе рисков ментор предлагает
-сделать следующие архитектурные изменения в пакете core.underwriting:
+Ментор добавил в код приложения два класса
+ClassifierRepository и ClassifierValueRepository,
+а так же тесты к ним. Это классы предназначенные для
+интеграции с реляционной базой данных, через эти классы
+можно делать запросы к базе данных и получать ответы.
+Ментор реализовал по одному запросу в каждом классе репозитории.
 
-Создать интерфейс TravelRiskPremiumCalculator с методами
+Ваша задача: разобраться в коде добавленном ментором, выяснить
+все возникшие у вас вопросы. Убедиться, что написанные тесты
+действительно проходят и понять почему.
 
-BigDecimal calculatePremium(TravelCalculatePremiumRequest request);
-String getRiskIc();
+Как дополнительный материал по теме можно послушать одну из лекций:
+Viktor: https://www.youtube.com/watch?v=HOlxx7mCJ3A
+Ruslan: https://www.youtube.com/watch?v=qeXzUX9JCns
 
-Для каждого из следующих рисков:
-               TRAVEL_MEDICAL
-               TRAVEL_CANCELLATION
-               TRAVEL_LOSS_BAGGAGE
-               TRAVEL_THIRD_PARTY_LIABILITY
-               TRAVEL_EVACUATION
-               TRAVEL_SPORT_ACTIVITIES
-создать свою реализацию интерфейса TravelRiskPremiumCalculator.
-Метод getRiskIc() каждой реализации будет возвращать ic код риска
-для которого он содержит алгоритм расчёта премии.
-
-По дефолту метод calculatePremium(...) должен возвращать 0 (BigDecimal.ZERO).
-
-Для TRAVEL_MEDICAL риска на данный момент оставить текущую
-формулу расчёта из класса TravelPremiumUnderwritingImpl.
-
-Далее в TravelPremiumUnderwritingImpl в зависимости получить
-список всех TravelRiskPremiumCalculator и с помощью него
-посчитать премии для каждого выбранного в запросе риска (selected_risks)
-и сложить их.
-
-Ваша задача: реализовать предложение ментора.
+https://spring.io/guides/gs/accessing-data-jpa/
+https://www.baeldung.com/spring-data-jpa-query
+https://reflectoring.io/spring-boot-data-jpa-test/

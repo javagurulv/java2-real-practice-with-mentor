@@ -1,8 +1,8 @@
 package org.javaguru.travel.insurance.core.validations.person;
 
-import org.javaguru.travel.insurance.core.api.dto.PersonDTO;
-import org.javaguru.travel.insurance.core.api.dto.ValidationErrorDTO;
 import org.javaguru.travel.insurance.core.validations.ValidationErrorFactory;
+import org.javaguru.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
+import org.javaguru.travel.insurance.dto.ValidationError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,14 +14,14 @@ class EmptyPersonBirthDateValidation extends TravelPersonFieldValidationImpl {
     @Autowired private ValidationErrorFactory errorFactory;
 
     @Override
-    public Optional<ValidationErrorDTO> validate(PersonDTO person) {
-        return (personBirthDateIsNull(person))
+    public Optional<ValidationError> validate(TravelCalculatePremiumRequestV1 request) {
+        return (personBirthDateIsNull(request))
                 ? Optional.of(errorFactory.buildError("ERROR_CODE_11"))
                 : Optional.empty();
     }
 
-    private boolean personBirthDateIsNull(PersonDTO person) {
-        return person.getPersonBirthDate() == null;
+    private boolean personBirthDateIsNull(TravelCalculatePremiumRequestV1 request) {
+        return request.getPersonBirthDate() == null;
     }
 
 }

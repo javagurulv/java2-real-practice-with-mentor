@@ -1,13 +1,8 @@
-Ментор обратил ваше внимание на код класса ClassifierValueRepositoryTest.
-Ментор утверждает, что в коде этого класса много дублирования.
-Ментор признаёт свою ошибку (так как именно он и писал этот код)
-и просит вас придумать способ улучшения кода в этом классе так,
-чтобы избавиться от повторений.
+Ментор обратил ваше внимание на то, что в пакете core
+находятся такие классы как DateTimeService и ErrorCodeUtil.
+Это вспомогательные классы, классы утилиты. Ментор предлагает
+создать для них пакет core.util и переместить эти классы туда.
+Заодно предлагается переименовать DateTimeService в DateTimeUtil.
+Это на взгляд ментора улучшит структуру кода проекта.
 
-Ваша задача: улучшить код в классе ClassifierValueRepositoryTest,
-избавиться от дупликации кода.
-
-https://refactoring.guru/extract-method
-https://www.jetbrains.com/help/idea/extract-method.html
-https://refactoring.com/catalog/extractFunction.html
-https://martinfowler.com/articles/class-too-large.html
+Ваша задача: реализовать предложение ментора.

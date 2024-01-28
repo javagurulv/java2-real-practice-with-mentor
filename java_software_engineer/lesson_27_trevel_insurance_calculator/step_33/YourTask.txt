@@ -1,13 +1,8 @@
-Ментор обратил ваше внимание на то, что при старте
-приложения на консоли появляются сообщения говорящие
-о том, что система логирования не сконфигурирована правильно:
+Ваша задача: повесьте аннотацию @Component на класс JsonFileReader.
+Да, Spring IoC работает так же и для тестов!
+Воспользуйтесь аннотацией @Autowired в классе
+TravelCalculatePremiumControllerTest
+для получения зависимости JsonFileReader.
 
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-
-Ваша задача: найти в интернете и добавить в приложение
-конфигурацию для системы логирования (Logback), чтобы указанные выше
-сообщения пропали при старте системы. Если нужно, то измените
-зависимости, чтобы Logback библиотека появилась в проекте.
-В конфигурации системы логирования достаточно указать консольный appender.
+Замените запросы в тестах на запросы из JSON файлов
+находящихся в директории src/test/resources.

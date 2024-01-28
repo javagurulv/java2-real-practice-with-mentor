@@ -7,10 +7,8 @@
   ],
   "personFirstName": null,
   "personLastName": null,
-  "personBirthDate": null,
   "agreementDateFrom": null,
   "agreementDateTo": null,
-  "country": null,
   "agreementPremium": null,
   "risks": null
 }

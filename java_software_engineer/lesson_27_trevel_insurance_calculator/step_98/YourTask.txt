@@ -1,69 +1,18 @@
-Ментор предлагает начать разработку поддержки нескольких
-персон в полисе с создания структуры нового запроса и нового ответа.
+После окончания работы над первой версией нашего продукта
+настало время оглянуться назад и оценить то, что мы за это
+время успели сделать.
 
 Ваша задача:
-разработать новую структуру запроса и ответа в JSON формате
-и обсудить ее с ментором.
+пройтись по всему проекту и попробовать сгенерировать
+и предложить идеи для улучшения. Любые идеи достойны того,
+чтобы их обсудить с ментором!
 
+Перед разговором с ментором:
+1. Составьте список идей с улучшениями.
+2. Для каждой идеи опишите словами кратко, что собираетесь
+изменить и самое главное почему вы считаете, что это будет
+улучшение (попробуйте это обосновать реальными аргументами).
 
+Если ваши идеи будут одобрены ментором, вы сможете их реализовать!
 
-
-
-New Request format:
-
-{
-  "agreementDateFrom" : "2025-05-25",
-  "agreementDateTo" : "2025-05-29",
-  "country" : "SPAIN",
-  "medicalRiskLimitLevel" : "LEVEL_10000",
-  "selected_risks":["TRAVEL_MEDICAL"],
-  "persons" : [
-        {
-          "personFirstName" : "Vasja",
-          "personLastName" : "Pupkin",
-          "personBirthDate" : "2000-05-29"
-        },
-        {
-          "personFirstName" : "Petja",
-          "personLastName" : "Pupkin",
-          "personBirthDate" : "2000-02-29"
-        }
-  ]
-}
-
-
-New Response format:
-{
-    "errors": null,
-    "agreementDateFrom": "2025-05-25",
-    "agreementDateTo": "2025-05-29",
-    "country": "SPAIN",
-    "medicalRiskLimitLevel" : "LEVEL_10000",
-    "agreementPremium": 22.00,
-    "persons" : [
-        {
-            "personFirstName" : "Vasja",
-            "personLastName" : "Pupkin",
-            "personBirthDate" : "2000-05-29",
-            "personPremium" : 11.00,
-            "risks": [
-                    {
-                        "riskIc": "TRAVEL_MEDICAL",
-                        "premium": 11.00
-                    }
-            ]
-        },
-        {
-          "personFirstName" : "Petja",
-          "personLastName" : "Pupkin",
-          "personBirthDate" : "2000-02-29",
-          "personPremium" : 11.00,
-            "risks": [
-                    {
-                        "riskIc": "TRAVEL_MEDICAL",
-                        "premium": 11.00
-                    }
-            ]
-        }
-    ]
-}
+Это креативное задание! Воспользуйтесь им по максимуму!
