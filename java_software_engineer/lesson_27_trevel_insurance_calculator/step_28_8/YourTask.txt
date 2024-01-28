@@ -1,0 +1,6 @@
+Обратите внимание на тестовые методы в классе
+TravelCalculatePremiumControllerTest. В них
+чётко прослеживается дупликация кода.
+
+Ваша задача: выполнить рефакторинг TravelCalculatePremiumControllerTest
+класса. Цель - избавиться от дупликации кода!
