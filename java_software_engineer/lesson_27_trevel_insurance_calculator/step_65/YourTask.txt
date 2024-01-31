@@ -1,13 +1,12 @@
-Ментор обратил ваше внимание на код класса ClassifierValueRepositoryTest.
-Ментор утверждает, что в коде этого класса много дублирования.
-Ментор признаёт свою ошибку (так как именно он и писал этот код)
-и просит вас придумать способ улучшения кода в этом классе так,
-чтобы избавиться от повторений.
+Ваша задача: создать доменную модель приложения (классы Classifier
+и ClassifierValue) и указать их маппинг на соответствующий
+таблицы в реляционной базе данных.
 
-Ваша задача: улучшить код в классе ClassifierValueRepositoryTest,
-избавиться от дупликации кода.
+Классы Classifier и ClassifierValue создать в пакете core.domain.
 
-https://refactoring.guru/extract-method
-https://www.jetbrains.com/help/idea/extract-method.html
-https://refactoring.com/catalog/extractFunction.html
-https://martinfowler.com/articles/class-too-large.html
+
+Как дополнительный материал по теме можно послушать одну из лекций:
+Viktor: https://www.youtube.com/watch?v=CM1ovXWBAGk
+Ruslan: https://www.youtube.com/watch?v=Ol3MxDW3rwg
+
+https://spring.io/guides/gs/accessing-data-mysql/

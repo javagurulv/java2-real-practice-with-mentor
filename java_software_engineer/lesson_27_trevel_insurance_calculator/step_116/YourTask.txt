@@ -1,11 +1,10 @@
-Ваша задача:
+После реализации валидации персон в класс TravelAgreementValidatorImpl
+ментор обратил ваше внимание на то, что кода в этом классе стало много.
 
-1. Скопируйте в /version_2 класс SelectedRisksPremiumCalculator.
+Ментор просит вас выполнить рефакторинг этого класса.
+Ментор предлагает вынести в отдельные классы валидацию agreement
+уровня и валидацию списка персон. И результаты этих двух валидаций
+объединить в классе TravelAgreementValidatorImpl.
 
-2. В классе SelectedRisksPremiumCalculator поменяйте сигнатуру
-List<RiskPremium> calculatePremiumForAllRisks(TravelCalculatePremiumRequestV1 request)
-на
-List<RiskDTO> calculatePremiumForAllRisks(AgreementDTO agreement, PersonDTO person)
-а так же сделайте нужные изменения в коде класса.
-Данный класс должен по полису и персоне рассчитывать все выбранные
-риски для переданной в качестве параметра персоне.
+
+Ваша задача: выполнить рефакторинг предложенный ментором.
