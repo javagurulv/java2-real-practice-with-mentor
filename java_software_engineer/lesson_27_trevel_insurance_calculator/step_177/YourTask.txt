@@ -1,5 +1,5 @@
 Ментор обратил ваше внимание на то, что в проекте
-есть классы билдеры, такие как AgreementDTOBuilder, PersonDTOBuilder
+есть классы билдеры такие, как AgreementDTOBuilder, PersonDTOBuilder
 и RiskDTOBuilder. Ментор говорит, что в библиотеке Lombok уже есть
 поддержка реализации дизайн паттерна Builder.
 
