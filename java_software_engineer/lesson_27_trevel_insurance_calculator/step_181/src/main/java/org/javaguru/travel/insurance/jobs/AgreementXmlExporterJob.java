@@ -1,4 +1,4 @@
-package org.javaguru.travel.insurance.core.jobs;
+package org.javaguru.travel.insurance.jobs;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
